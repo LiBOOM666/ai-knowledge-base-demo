@@ -76,7 +76,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <section class="detail-card"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手（预览版）</h2><p>您的场馆运营资料百事通</p></div></div><p>围绕场馆运营资料进行提问，快速获取回答，并查看对应资料出处。</p></section>
 <section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>管理场馆专属资料</h3><p>开通试用或正式服务后，可在电脑端上传场馆业务资料，建立专属知识库。</p></div><div class="feature-item"><h3>根据资料进行问答</h3><p>员工围绕运营制度、服务规范和操作流程提问，从知识库中查询相关内容。</p></div><div class="feature-item"><h3>查看引用和原文</h3><p>回答附带资料出处，可查看引用切片与完整文档。</p></div></section>
 </div>
-<div class="detail-actions"><button id="previewAgent">体验对话</button></div>
+
 </section>
 <section class="documents-page" id="documentsPage" aria-label="示例资料浏览" hidden><header><button class="back" id="closeDocuments" aria-label="返回对话">‹</button><h1>示例资料</h1><span></span></header><div class="documents-body"><article class="document">
 <h2>场馆日常业务操作指南</h2>
@@ -178,7 +178,6 @@ document.getElementById('salesDetailChat').addEventListener('click',()=>{if(busy
 function closeDetail(){agentDetail.hidden=true;switchButton.focus()}
 function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库助手（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;document.getElementById('trialNote').hidden=sales||completedRounds===0;query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();scrollArea.scrollTop=state.scroll}
 document.getElementById('closeDetail').addEventListener('click',closeDetail);
-document.getElementById('previewAgent').addEventListener('click',()=>{if(busy)return;agentDetail.hidden=true;enterAssistant('knowledge')});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail()}});
 let selectedMember=0;
 const memberChats=[{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false},{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false}];
