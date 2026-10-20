@@ -41,10 +41,12 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 .history-head{gap:8px;padding:18px 12px 12px;border:0}.history-search{flex:1;min-width:0;width:100%;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 11px;color:var(--sub);font:inherit;font-size:13px;cursor:text}.history-new{margin:0 16px 12px;padding:10px;border:1px solid #d4e3ff;border-radius:10px;background:#f1f6ff;color:var(--brand);font:inherit}.history-item[aria-current="true"]{background:#edf4ff;color:var(--brand)}.history-list{border-top:1px solid var(--line)}
 .history-button{display:grid;place-items:center;justify-self:end;width:40px;height:40px;padding:0;border-radius:50%}.history-button:hover{background:#f0f5fc}
 .history-item{display:flex;align-items:center;gap:10px}.history-item-copy{flex:1;min-width:0}
+.demo-layout{position:relative}.version-tabs{position:absolute;right:calc(100% + 24px);top:110px;width:132px;display:flex;flex-direction:column;gap:10px}.version-tab{padding:11px 14px;border:1px solid #cdd9eb;border-radius:10px;background:white;color:#52647e;white-space:nowrap}.version-tab[aria-pressed="true"]{border-color:var(--brand);background:#edf4ff;color:var(--brand);font-weight:600}.version-tab:focus-visible{outline:2px solid var(--brand);outline-offset:3px}@media(max-width:740px){body{display:block}.demo-layout{width:max-content;min-width:100%;display:flex;align-items:flex-start;gap:12px;padding:12px}.version-tabs{position:static;width:104px;flex:none;padding-top:90px}.demo-layout .app{flex:none}.version-tab{padding:10px 8px}} 
 </style>
 </head>
 <body>
-<main class="app">
+<div class="demo-layout"><nav class="version-tabs" aria-label="演示版本"><button type="button" class="version-tab" data-version="preview" aria-pressed="true">开通前体验</button><button type="button" class="version-tab" data-version="trial" aria-pressed="false">体验版</button><button type="button" class="version-tab" data-version="formal" aria-pressed="false">正式版</button></nav>
+<main class="app" data-version="preview">
 <div class="speaker"></div><div class="status"><span>9:41</span><span class="status-icons">▮▮▮ ◔ ▰</span></div>
 <header><button class="back" id="back" aria-label="返回">‹</button><h1>菠菜智能助手</h1><button class="history-button" id="openHistory" aria-controls="historyMask" aria-expanded="false" aria-label="对话历史" title="对话历史"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.6 7.4"/><path d="M3 4v7h7"/><path d="M12 7v5l3 2"/></svg></button></header>
 <section class="notice"><div class="symbol">✦</div><div class="notice-copy"><b id="sceneName">知识库助手（预览版）</b><span>您的场馆运营资料百事通</span></div><button class="switch" id="switch" aria-haspopup="dialog">详情</button></section>
@@ -101,7 +103,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <div class="source-mask" id="sourceMask" hidden><section class="source-sheet" role="dialog" aria-modal="true" aria-labelledby="sourceTitle"><div class="handle"></div><div class="source-head"><h3 id="sourceTitle">场馆日常业务操作指南</h3><button id="closeSource" aria-label="关闭资料引用">×</button></div><p class="doc-meta" id="sourceMeta"></p><p class="excerpt" id="sourceExcerpt"></p><button class="full-doc" id="viewSource">查看源文件</button></section></div>
 <div class="history-mask" id="historyMask" inert aria-hidden="true"><section class="history-panel" role="dialog" aria-modal="true" aria-label="对话历史"><div class="history-head"><input class="history-search" id="historySearch" type="text" placeholder="搜索对话记录" aria-label="搜索对话记录" readonly><button class="history-close" id="closeHistory" aria-label="关闭对话历史">×</button></div><button class="history-new" id="newHistoryChat">＋ 新对话</button><div class="history-list" id="historyList"></div></section></div>
 <div class="toast" id="toast" role="status" hidden></div>
-</main>
+</main></div>
 <script>
 const query=document.getElementById('query'),send=document.getElementById('send'),thread=document.getElementById('thread'),scrollArea=document.getElementById('scroll');
 const materials=[
@@ -260,6 +262,7 @@ document.getElementById('newHistoryChat').addEventListener('click',()=>loadHisto
 document.getElementById('closeHistory').addEventListener('click',closeHistory);
 historyMask.addEventListener('click',event=>{if(event.target===historyMask)closeHistory()});
 historyMask.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();closeHistory()}if(event.key==='Tab'){const controls=[...historyMask.querySelectorAll('button,input')];const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
+document.querySelectorAll('.version-tab').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.version-tab').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelector('.app').dataset.version=button.dataset.version}));
 showSuggestions(0);
 </script>
 </body>
