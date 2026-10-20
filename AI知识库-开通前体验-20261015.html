@@ -82,9 +82,8 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <div class="detail-body">
 <section class="detail-card"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手（预览版）</h2><p>您的场馆运营资料百事通</p></div></div><p>围绕场馆运营资料进行提问，快速获取回答，并查看对应资料出处。</p></section>
 <section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>管理场馆专属资料</h3><p>开通试用或正式服务后，可在电脑端上传场馆业务资料，建立专属知识库。</p></div><div class="feature-item"><h3>根据资料进行问答</h3><p>员工围绕运营制度、服务规范和操作流程提问，从知识库中查询相关内容。</p></div><div class="feature-item"><h3>查看引用和原文</h3><p>回答附带资料出处，可查看引用切片与完整文档。</p></div></section>
-<p class="consult-note" id="consultNote" role="status" hidden>请联系菠菜工作人员，说明场馆的使用场景，了解试用权益和开通方案。</p>
 </div>
-<div class="detail-actions"><button id="previewAgent">体验对话</button><button class="primary" id="consultAgent">咨询开通</button></div>
+<div class="detail-actions"><button id="previewAgent">体验对话</button></div>
 </section>
 <section class="documents-page" id="documentsPage" aria-label="示例资料浏览" hidden><header><button class="back" id="closeDocuments" aria-label="返回对话">‹</button><h1>示例资料</h1><span></span></header><div class="documents-body"><article class="document">
 <h2>场馆日常业务操作指南</h2>
@@ -193,7 +192,6 @@ document.getElementById('enterSalesChat').addEventListener('click',()=>enterAssi
 document.getElementById('viewKnowledgeDetail').addEventListener('click',event=>{event.stopPropagation();agentDetail.hidden=false;document.getElementById('closeDetail').focus()});
 document.getElementById('closeDetail').addEventListener('click',closeDetail);
 document.getElementById('previewAgent').addEventListener('click',()=>{if(busy)return;agentDetail.hidden=true;enterAssistant('knowledge')});
-document.getElementById('consultAgent').addEventListener('click',()=>{const note=document.getElementById('consultNote');note.hidden=false;note.scrollIntoView({block:'nearest',behavior:'smooth'})});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail();else if(!agentSquare.hidden)closeSquare()}});
 let selectedMember=0;
 const memberChats=[{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false},{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false}];
