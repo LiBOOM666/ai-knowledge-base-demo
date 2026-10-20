@@ -40,7 +40,7 @@ footer{padding:10px 14px max(14px,env(safe-area-inset-bottom))}.input{padding:5p
 header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.history-button) h1{padding-left:28px}.history-button{border:0;background:transparent;color:var(--brand);font-size:12px;padding:8px 0;white-space:nowrap}.history-mask{position:absolute;inset:0;z-index:30;background:#17233b55;opacity:0;visibility:hidden;transition:opacity .24s,visibility .24s}.history-mask.is-open{opacity:1;visibility:visible}.history-panel{position:absolute;right:0;top:0;bottom:0;width:80%;background:white;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .24s ease;box-shadow:-8px 0 30px #17233b18}.history-mask.is-open .history-panel{transform:translateX(0)}.history-head{display:flex;align-items:center;justify-content:space-between;padding:20px 16px;border-bottom:1px solid var(--line)}.history-head h2{font-size:17px;margin:0}.history-close{width:32px;height:32px;border:0;background:transparent;color:var(--sub);font-size:26px}.history-list{flex:1;overflow:auto;padding:12px}.history-item{display:block;width:100%;padding:13px 10px;text-align:left;border:0;border-bottom:1px solid var(--line);background:white;color:var(--ink)}.history-item:hover{background:#f4f8ff}.history-item b{display:block;font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.history-item time{display:block;margin-top:5px;font-size:11px;color:var(--sub)}.history-empty{text-align:center;color:var(--sub);font-size:13px;margin:40px 0}@media(prefers-reduced-motion:reduce){.history-mask,.history-panel{transition:none}}
 .history-head{gap:8px;padding:18px 12px 12px;border:0}.history-search{flex:1;min-width:0;width:100%;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 11px;color:var(--sub);font:inherit;font-size:13px;cursor:text}.history-new{margin:0 16px 12px;padding:10px;border:1px solid #d4e3ff;border-radius:10px;background:#f1f6ff;color:var(--brand);font:inherit}.history-item[aria-current="true"]{background:#edf4ff;color:var(--brand)}.history-list{border-top:1px solid var(--line)}
 .history-button{display:grid;place-items:center;justify-self:end;width:40px;height:40px;padding:0;border-radius:50%}.history-button:hover{background:#f0f5fc}
-.history-item{display:flex;align-items:center;gap:10px}.history-agent-icon{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:#e9f1ff;color:var(--brand);font-size:17px}.history-item-copy{flex:1;min-width:0}
+.history-item{display:flex;align-items:center;gap:10px}.history-item-copy{flex:1;min-width:0}
 </style>
 </head>
 <body>
@@ -217,29 +217,6 @@ const demoHistory=[
   ]
  },
  {
-  "title": "根据会员画像制定跟进计划",
-  "assistant": "sales",
-  "date": "2026-10-18 10:15",
-  "messages": [
-   [
-    "user",
-    "根据这位会员的画像，下一步怎么跟进？"
-   ],
-   [
-    "answer",
-    "演示会员近期持续参课，当前合同剩余 10 节。\n建议先了解家长对课程的感受，结合教练反馈确认后续学习目标，再约定下一次联系时间。"
-   ],
-   [
-    "user",
-    "现在需要直接问续费吗？"
-   ],
-   [
-    "answer",
-    "可以先了解后续学习意向和时间安排。\n当前仍有剩余课时，先维护课程体验，再结合实际进度沟通续班方案。"
-   ]
-  ]
- },
- {
   "title": "私教课消课前的核对事项",
   "assistant": "knowledge",
   "date": "2026-10-17 18:20",
@@ -261,52 +238,6 @@ const demoHistory=[
     "不能直接消课。\n应登记未到店情况，并按实际业务流程处理异常。"
    ]
   ]
- },
- {
-  "title": "家长近期忙，如何调整跟进节奏",
-  "assistant": "sales",
-  "date": "2026-10-16 14:40",
-  "messages": [
-   [
-    "user",
-    "家长说最近比较忙，暂时不考虑续费。"
-   ],
-   [
-    "answer",
-    "先了解时间冲突预计会持续多久，以及家长能接受的上课安排。\n这条反馈不能直接等同于会员流失，建议暂缓催促续费。"
-   ],
-   [
-    "user",
-    "下次联系可以怎么说？"
-   ],
-   [
-    "answer",
-    "可以参考：了解到您最近时间比较紧张，想确认一下后续哪段时间更方便上课？我们先看看课程怎么安排更合适。\n根据家长反馈约定下一次联系时间。"
-   ]
-  ]
- },
- {
-  "title": "家长对续班费用有顾虑",
-  "assistant": "sales",
-  "date": "2026-10-15 09:10",
-  "messages": [
-   [
-    "user",
-    "家长觉得续班费用有点高，应该怎么沟通？"
-   ],
-   [
-    "answer",
-    "先确认主要是预算安排，还是对课程效果有疑问。\n结合会员的实际学习情况说明已确认的课程权益，不自行承诺优惠。"
-   ],
-   [
-    "user",
-    "帮我整理一句沟通话术。"
-   ],
-   [
-    "answer",
-    "可以参考：了解到您对费用有些顾虑，方便说说主要是预算安排，还是希望进一步了解孩子的学习效果？我先了解清楚，再一起看看合适的安排。"
-   ]
-  ]
  }
 ];
 let activeHistory=null;
@@ -323,7 +254,7 @@ function loadHistory(record){
  if(activeAssistant==='sales')setProfileCollapsed(completedRounds>0);
  thread.setAttribute('aria-busy','false');sync();closeHistory();bottom();
 }
-function renderHistory(){historyList.replaceChildren();demoHistory.forEach(record=>{const item=document.createElement('button');item.className='history-item';item.setAttribute('aria-current',String(activeHistory===record));const title=document.createElement('b');title.textContent=record.title;const time=document.createElement('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库助手')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00';const icon=document.createElement('span');icon.className='history-agent-icon';icon.setAttribute('aria-hidden','true');icon.textContent=record.assistant==='sales'?'◎':'✦';const copy=document.createElement('span');copy.className='history-item-copy';copy.append(title,time);item.append(icon,copy);item.addEventListener('click',()=>loadHistory(record));historyList.append(item)})}
+function renderHistory(){historyList.replaceChildren();demoHistory.forEach(record=>{const item=document.createElement('button');item.className='history-item';item.setAttribute('aria-current',String(activeHistory===record));const title=document.createElement('b');title.textContent=record.title;const time=document.createElement('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库助手')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00';const copy=document.createElement('span');copy.className='history-item-copy';copy.append(title,time);item.append(copy);item.addEventListener('click',()=>loadHistory(record));historyList.append(item)})}
 historyButton.addEventListener('click',()=>{renderHistory();historyMask.inert=false;historyMask.setAttribute('aria-hidden','false');historyMask.classList.add('is-open');historyButton.setAttribute('aria-expanded','true');document.getElementById('historySearch').focus()});
 document.getElementById('historySearch').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='进入搜索页面（演示提示）';toast.style.zIndex='40';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 document.getElementById('newHistoryChat').addEventListener('click',()=>loadHistory(null));
