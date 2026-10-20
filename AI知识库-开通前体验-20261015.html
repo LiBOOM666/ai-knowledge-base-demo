@@ -61,16 +61,8 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <p class="trial-note" id="trialNote" hidden>您可以联系菠菜工作人员领取试用权益<br>体验上传、使用您场馆专属的知识库</p>
 <div class="examples" id="suggestions" aria-label="建议提问"></div>
 <footer><form id="form"><div class="input"><textarea id="query" rows="1" maxlength="500" placeholder="输入问题，感受问答效果" aria-label="问题"></textarea><button id="send" disabled>发送</button></div></form></footer>
-<section class="square-page" id="agentSquare" aria-label="智能体广场" hidden>
-<header><button class="back" id="closeSquare" aria-label="返回对话">‹</button><h1>智能体广场</h1><span></span></header>
-<div class="agent-list">
-<article class="agent-card current" id="enterKnowledge"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手</h2><p>您的场馆运营资料百事通</p></div><button class="enter-dialog" id="enterKnowledgeChat">进入对话</button></div><div class="agent-bottom"><span>预览版</span><button class="agent-enter" id="viewKnowledgeDetail">查看详情 ›</button></div></article>
-<article class="agent-card current sales-card"><div class="agent-top"><span class="agent-icon">◎</span><div class="agent-copy"><h2>销售助手</h2><p>辅助会员需求沟通、会员卡推荐和销售跟进。</p></div><button class="enter-dialog" id="enterSalesChat">进入对话</button></div><div class="agent-bottom"><span>基础版</span><button class="agent-enter" id="viewSalesDetail">查看详情 ›</button></div></article>
-<article class="agent-card upcoming"><div class="agent-top"><span class="agent-icon">◇</span><div class="agent-copy"><h2>教练助手</h2><p>辅助查询课程服务规范与日常教学资料。</p></div></div><div class="agent-bottom"><span>敬请期待</span></div></article>
-<article class="agent-card upcoming"><div class="agent-top"><span class="agent-icon">▤</span><div class="agent-copy"><h2>运营助手</h2><p>辅助查阅场馆运营制度与会员服务流程。</p></div></div><div class="agent-bottom"><span>敬请期待</span></div></article>
-</div></section>
 <section class="square-page agent-detail" id="salesDetail" aria-label="销售助手详情" hidden>
-<header><button class="back" id="closeSalesDetail" aria-label="返回智能体广场">‹</button><h1>智能体详情</h1><span></span></header>
+<header><button class="back" id="closeSalesDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
 <div class="detail-body">
 <section class="detail-card"><div class="agent-top"><span class="agent-icon">◎</span><div class="agent-copy"><h2>销售助手</h2><p>协助您制定会员跟进与续费策略</p></div></div><p>围绕单个会员了解近况、分析需求，帮助销售安排下一步跟进。</p></section>
 <section class="detail-card"><h2>核心能力</h2><div class="feature-item"><h3>了解会员近况</h3><p>查询会员最近上课、签课及合同剩余等信息，为沟通提供参考。</p></div><div class="feature-item"><h3>根据画像提供跟进建议</h3><p>结合会员画像与使用情况，给出跟进、续费策略及参考话术。</p></div><div class="feature-item"><h3>分析反馈并整理跟进</h3><p>销售补充会员近况后，先给出基础分析，再通过“整理内容并计入跟进”生成跟进记录。</p></div></section>
@@ -79,7 +71,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 </div><div class="detail-actions"><button class="primary" id="salesDetailChat">进入对话</button></div>
 </section>
 <section class="square-page agent-detail" id="agentDetail" aria-label="智能体详情" hidden>
-<header><button class="back" id="closeDetail" aria-label="返回智能体广场">‹</button><h1>智能体详情</h1><span></span></header>
+<header><button class="back" id="closeDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
 <div class="detail-body">
 <section class="detail-card"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手（预览版）</h2><p>您的场馆运营资料百事通</p></div></div><p>围绕场馆运营资料进行提问，快速获取回答，并查看对应资料出处。</p></section>
 <section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>管理场馆专属资料</h3><p>开通试用或正式服务后，可在电脑端上传场馆业务资料，建立专属知识库。</p></div><div class="feature-item"><h3>根据资料进行问答</h3><p>员工围绕运营制度、服务规范和操作流程提问，从知识库中查询相关内容。</p></div><div class="feature-item"><h3>查看引用和原文</h3><p>回答附带资料出处，可查看引用切片与完整文档。</p></div></section>
@@ -175,25 +167,19 @@ const questions=['会员投诉应该如何处理？','如何推荐合适的会�
 const sceneQuestions=[questions,[questions[0],'接到会员客诉后要记录哪些信息？','如何向会员反馈投诉处理进展？'],['了解这位会员的近况、签课和合同剩余信息','根据会员画像，下一步怎么跟进？','家长说最近比较忙，暂时不考虑续费'],[questions[2],'私教课核销前需要核对什么？','会员未到店，能直接消课吗？']];
 let suggestionScene=0,suggestionIndex=0;
 function showSuggestions(scene){suggestionScene=scene;suggestionIndex=0;const box=document.getElementById('suggestions');box.replaceChildren();const label=document.createElement('div');label.className='label';label.textContent='可以试试';const question=document.createElement('button');question.className='example';question.id='suggestedQuestion';question.textContent=sceneQuestions[scene][0];question.addEventListener('click',()=>ask(question.textContent));const refresh=document.createElement('button');refresh.className='refresh-question';refresh.textContent='换一换';refresh.title='换一换';refresh.setAttribute('aria-label','换一换建议提问');refresh.addEventListener('click',()=>{suggestionIndex=(suggestionIndex+1)%sceneQuestions[suggestionScene].length;question.textContent=sceneQuestions[suggestionScene][suggestionIndex]});box.append(label,question,refresh)}
-const agentSquare=document.getElementById('agentSquare'),switchButton=document.getElementById('switch');
-function closeSquare(){agentSquare.hidden=true;switchButton.focus()}
+const switchButton=document.getElementById('switch');
 switchButton.setAttribute('aria-haspopup','false');
-switchButton.addEventListener('click',()=>{agentSquare.hidden=false;document.getElementById('closeSquare').focus()});
-document.getElementById('closeSquare').addEventListener('click',closeSquare);
+switchButton.addEventListener('click',()=>{const sales=activeAssistant==='sales';(sales?salesDetail:agentDetail).hidden=false;document.getElementById(sales?'closeSalesDetail':'closeDetail').focus()});
 const agentDetail=document.getElementById('agentDetail');
 const salesDetail=document.getElementById('salesDetail');
-function closeSalesDetail(){salesDetail.hidden=true;document.getElementById('viewSalesDetail').focus()}
-document.getElementById('viewSalesDetail').addEventListener('click',()=>{salesDetail.hidden=false;document.getElementById('closeSalesDetail').focus()});
+function closeSalesDetail(){salesDetail.hidden=true;switchButton.focus()}
 document.getElementById('closeSalesDetail').addEventListener('click',closeSalesDetail);
 document.getElementById('salesDetailChat').addEventListener('click',()=>{if(busy)return;salesDetail.hidden=true;enterAssistant('sales')});
-function closeDetail(){agentDetail.hidden=true;document.getElementById('viewKnowledgeDetail').focus()}
-function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库助手（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;document.getElementById('trialNote').hidden=sales||completedRounds===0;query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();closeSquare();scrollArea.scrollTop=state.scroll}
-document.getElementById('enterKnowledgeChat').addEventListener('click',()=>enterAssistant('knowledge'));
-document.getElementById('enterSalesChat').addEventListener('click',()=>enterAssistant('sales'));
-document.getElementById('viewKnowledgeDetail').addEventListener('click',event=>{event.stopPropagation();agentDetail.hidden=false;document.getElementById('closeDetail').focus()});
+function closeDetail(){agentDetail.hidden=true;switchButton.focus()}
+function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库助手（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;document.getElementById('trialNote').hidden=sales||completedRounds===0;query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();scrollArea.scrollTop=state.scroll}
 document.getElementById('closeDetail').addEventListener('click',closeDetail);
 document.getElementById('previewAgent').addEventListener('click',()=>{if(busy)return;agentDetail.hidden=true;enterAssistant('knowledge')});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail();else if(!agentSquare.hidden)closeSquare()}});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail()}});
 let selectedMember=0;
 const memberChats=[{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false},{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false}];
 function setProfileCollapsed(collapsed){document.getElementById('profileDetails').hidden=collapsed;const toggle=document.getElementById('toggleProfile');toggle.textContent=collapsed?'展开 ∨':'收起 ∧';toggle.setAttribute('aria-expanded',String(!collapsed));memberChats[selectedMember].collapsed=collapsed}
