@@ -70,7 +70,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
  </div>
  <div id="thread" role="log" aria-live="polite" aria-label="体验对话"></div>
 </section>
-<p class="trial-note" id="trialNote" hidden>前往电脑端上传文件后，正式使用。</p>
+<p class="trial-note" id="trialNote" hidden>前往电脑端<button class="text-link" id="uploadFilesHint" type="button">上传文件</button>后，正式使用。</p>
 <div class="examples" id="suggestions" aria-label="建议提问"></div>
 <footer><form id="form"><div class="input"><textarea id="query" rows="1" maxlength="500" placeholder="输入问题，感受问答效果" aria-label="问题"></textarea><button id="send" disabled>发送</button></div></form></footer>
 <section class="square-page agent-detail" id="salesDetail" aria-label="销售助手详情" hidden>
@@ -286,6 +286,7 @@ historyMask.addEventListener('keydown',event=>{if(event.key==='Escape'){event.st
 document.querySelectorAll('.version-tab').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.version-tab').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelector('.app').dataset.version=button.dataset.version;updateVersionView()}));
 function syncTrialNote(){document.getElementById('trialNote').hidden=document.querySelector('.app').dataset.version!=='preview'||activeAssistant!=='knowledge'||!thread.querySelector('.message.user')}
 function updateVersionView(){syncTrialNote();const preview=document.querySelector('.app').dataset.version==='preview';historyButton.disabled=preview;if(preview){historySearchPage.hidden=true;if(historyMask.classList.contains('is-open'))closeHistory();}if(activeAssistant==='knowledge'){const version=document.querySelector('.app').dataset.version;document.getElementById('sceneName').textContent='知识库（'+({preview:'预览版',trial:'体验版',formal:'正式版'}[version])+'）';document.querySelector('#agentDetail .agent-copy h2').textContent=version==='preview'?'知识库（预览版）':'知识库（体验版）'}}
+document.getElementById('uploadFilesHint').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='请前往电脑端上传文件';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 document.getElementById('detailManual').addEventListener('click',()=>document.getElementById('trialManual').click());
 document.getElementById('trialManual').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='查看操作手册（演示提示）';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 showSuggestions(0);
