@@ -50,6 +50,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 .search-history-terms{display:flex;flex-direction:column;gap:0}.search-history-card{display:flex;align-items:center;gap:10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:6px 0}.search-history-card .search-history-term{flex:1;min-width:0;text-align:left;background:transparent;border-radius:0;padding:10px 2px;overflow-wrap:anywhere}.search-history-delete{flex:none;display:grid;place-items:center;width:36px;height:36px;border:0;background:transparent;color:#000;font-size:24px;line-height:1;padding:0}.search-history-delete:hover{color:#000}
 .history-head{align-items:center}.history-head .history-search{position:relative;top:0;align-self:center;display:flex;align-items:center;line-height:1.4}.history-head .history-close{display:grid;place-items:center;align-self:center;height:38px;padding:0;line-height:1}
 .knowledge-summary .agent-top{align-items:center}.knowledge-summary .agent-copy h2{margin:0}.knowledge-summary .knowledge-description{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.usage-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.usage-heading h2{margin:0}.usage-heading .text-link{font-size:12px;flex:none}
 </style>
 </head>
 <body>
@@ -86,7 +87,7 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <div class="detail-body">
 <section class="detail-card knowledge-summary"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库（预览版）</h2></div></div><p class="knowledge-description">将场馆的制度、服务规范变成可随时查询的知识。<br>员工直接提问，即可根据资料获取回答，并查看出处。</p></section>
 <section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>新人培训少些重复讲解</h3><p>将员工手册、岗位职责和操作指南放入知识库，新人遇到问题随时查询，减少重复答疑。</p></div><div class="feature-item"><h3>门店执行有统一依据</h3><p>集中提供服务标准、巡检要求和应急预案，员工按需查阅，让日常执行有章可循。</p></div><div class="feature-item"><h3>运营经验留下来、用起来</h3><p>将运营方案、培训材料和经验总结集中沉淀，方便员工查找和复用，减少对个人记忆的依赖。</p></div></section>
-<section class="detail-card"><h2>使用步骤</h2><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>管理员上传资料</h3><p>在电脑端上传各类规范文件。</p></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>员工直接提问</h3><p>打开手机端，输入问题，获得 ai 回复。</p></div></div></section>
+<section class="detail-card"><div class="usage-heading"><h2>使用步骤</h2><button class="text-link" id="detailManual">操作手册</button></div><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>管理员上传资料</h3><p>在电脑端上传各类规范文件。</p></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>员工直接提问</h3><p>打开手机端，输入问题，获得 ai 回复。</p></div></div></section>
 </div>
 
 </section>
@@ -285,6 +286,7 @@ historyMask.addEventListener('keydown',event=>{if(event.key==='Escape'){event.st
 document.querySelectorAll('.version-tab').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.version-tab').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelector('.app').dataset.version=button.dataset.version;updateVersionView()}));
 function syncTrialNote(){document.getElementById('trialNote').hidden=document.querySelector('.app').dataset.version!=='preview'||activeAssistant!=='knowledge'||!thread.querySelector('.message.user')}
 function updateVersionView(){syncTrialNote();const preview=document.querySelector('.app').dataset.version==='preview';historyButton.disabled=preview;if(preview){historySearchPage.hidden=true;if(historyMask.classList.contains('is-open'))closeHistory();}if(activeAssistant==='knowledge'){const version=document.querySelector('.app').dataset.version;document.getElementById('sceneName').textContent='知识库（'+({preview:'预览版',trial:'体验版',formal:'正式版'}[version])+'）';document.querySelector('#agentDetail .agent-copy h2').textContent=version==='preview'?'知识库（预览版）':'知识库（体验版）'}}
+document.getElementById('detailManual').addEventListener('click',()=>document.getElementById('trialManual').click());
 document.getElementById('trialManual').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='查看操作手册（演示提示）';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 showSuggestions(0);
 </script>
