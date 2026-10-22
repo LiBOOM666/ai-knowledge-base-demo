@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 知识库 · 开通前体验</title>
+<style>
+:root{--ink:#17233b;--sub:#71809a;--line:#e7edf5;--brand:#176bff}*{box-sizing:border-box}body{margin:0;background:#edf2f8;font:14px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);display:grid;place-items:center;min-height:100dvh}button,textarea{font:inherit}button{cursor:pointer}.app{width:430px;height:min(880px,calc(100dvh - 36px));background:white;border:1px solid #dce4ef;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 60px #253b6010}header{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line)}h1{font-size:17px;margin:0}.badge{font-size:12px;color:#66758e;background:#f1f4f8;border-radius:5px;padding:2px 8px}.scroll{flex:1;overflow:auto;padding:22px 20px;scroll-behavior:smooth}.intro{padding:20px 18px;background:#f4f8ff;border:1px solid #e1ebff;border-radius:16px}.symbol{display:grid;place-items:center;background:#e3edff;color:var(--brand);width:42px;height:42px;border-radius:13px;font-size:24px}h2{font-size:21px;line-height:1.5;margin:14px 0 8px}.intro p{margin:0;color:#60718c;font-size:13px;white-space:pre-line}.examples{margin-top:26px}.label{font-size:12px;color:var(--sub);margin-bottom:10px}.example{display:flex;justify-content:space-between;width:100%;text-align:left;border:1px solid var(--line);border-radius:12px;background:white;padding:12px 14px;color:#354965;margin-bottom:9px}.example:hover{background:#f7faff;border-color:#bdcff0}.example span{color:#90a2bf}.disclaimer{text-align:center;color:#94a0b3;font-size:11px;margin:20px 0 0}.message{display:flex;gap:9px;margin:22px 0;align-items:flex-start}.avatar{flex-shrink:0;width:28px;height:28px;border-radius:9px;background:#e8f0ff;color:var(--brand);display:grid;place-items:center}.bubble{max-width:calc(100% - 37px);white-space:pre-line;overflow-wrap:anywhere}.user{justify-content:flex-end}.user .bubble{padding:10px 14px;background:var(--brand);color:white;border-radius:14px 4px 14px 14px}.answer .bubble{padding-top:2px}.answer-title{font-weight:600;margin-bottom:8px}.source{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#f7f9fc;padding:9px 11px;color:#61738e;font-size:12px}.source small{display:block;color:#95a1b2}.thinking{color:var(--sub)}.thinking:after{content:' …';animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.4}}footer{padding:12px 16px 16px;border-top:1px solid var(--line);background:white}.input{display:flex;align-items:flex-end;gap:8px;padding:7px 7px 7px 13px;border:1px solid #dce4ef;border-radius:18px;background:#f9fbfd}.input:focus-within{border-color:#88b1ff}textarea{flex:1;min-width:0;resize:none;height:40px;max-height:100px;border:0;outline:0;background:transparent;padding:8px 0;line-height:24px}#send{height:36px;border:0;padding:0 14px;border-radius:12px;background:var(--brand);color:white}#send:disabled{background:#e2e9f3;color:#91a0b6;cursor:default}.hint{margin:8px 0 0;color:#98a3b4;font-size:11px;text-align:center}@media(max-width:480px){body{background:white}.app{width:100%;height:100dvh;border:0;border-radius:0;box-shadow:none}footer{padding-bottom:max(16px,env(safe-area-inset-bottom))}}
+/* 与既有手机端 Demo 保持相同的容器、导航和对话布局。 */
+body{background:radial-gradient(circle at 50% 18%,#f2f6ff 0,#e8eef7 42%,#dde5f0 100%)}
+.app{position:relative;width:390px;height:min(844px,calc(100dvh - 32px));border:9px solid #182236;border-radius:43px;box-shadow:0 25px 70px rgba(35,54,84,.28),inset 0 0 0 1px rgba(255,255,255,.35)}
+.speaker{position:absolute;z-index:3;top:8px;left:50%;width:112px;height:23px;transform:translateX(-50%);border-radius:15px;background:#182236}
+.status{height:37px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:8px 21px 0;font-size:11px;font-weight:650}.status-icons{font-size:12px;letter-spacing:2px}
+header{height:54px;display:grid;grid-template-columns:48px 1fr 48px;padding:0 7px}h1{text-align:center;font-size:17px}.back{width:40px;height:40px;display:grid;place-items:center;border:0;border-radius:20px;background:transparent;color:var(--ink);font-size:25px;line-height:1}
+.notice{flex:none;margin:10px 16px 0;padding:12px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;border:1px solid #d9e7ff;border-radius:14px;background:linear-gradient(100deg,#f5f9ff,#fff)}.notice .symbol{width:36px;height:36px;font-size:18px;border-radius:11px;flex:none}.notice b{display:block;font-size:14px}.notice span{display:block;margin-top:4px;font-size:11px;color:#607596;line-height:1.4}.notice .disclaimer{flex-basis:100%;margin:0;padding-top:9px;border-top:1px solid #e1ebff;text-align:left;font-size:11px;line-height:1.6;color:#71809a}
+.scroll{padding:0 16px 15px;min-height:0}.intro{padding:28px 4px 0;border:0;background:transparent;border-radius:0}.intro>.symbol{display:none}h2{font-size:20px;margin:0 0 12px}.examples{margin-top:22px}.message{margin:18px 0;gap:9px}.avatar{width:29px;height:29px;border-radius:10px;background:#176bff;color:white}.user .avatar{order:2;background:#e7edf6;color:#53647e;font-size:12px}.bubble{max-width:280px;font-size:14px;line-height:1.65}.user .bubble{padding:11px 13px}.answer .bubble{max-width:calc(100% - 38px)}.answer-title{font-size:15px;font-weight:720}.source{border-color:#dce6f4;border-radius:12px;background:#f8fbff;padding:10px}.source:before{content:'▤';color:var(--brand);margin-right:7px}
+footer{padding:10px 14px max(14px,env(safe-area-inset-bottom))}.input{padding:5px 5px 5px 13px;border-radius:22px;background:#f8fafc}textarea{height:34px;max-height:96px;padding:7px 0;font-size:14px;line-height:20px}#send{height:34px;border-radius:18px;padding:0 13px;font-size:13px}#send:disabled{background:#d9e5f9;color:#3976d2}.hint{font-size:10px}.toast{position:absolute;z-index:20;bottom:100px;left:50%;transform:translateX(-50%);padding:9px 13px;border-radius:18px;background:rgba(24,36,57,.91);color:white;font-size:12px;white-space:nowrap}.toast[hidden]{display:none}
+@media(max-width:480px){body{background:white}.app{width:100vw;height:100dvh;border:0;border-radius:0;box-shadow:none}.speaker{display:none}}
+.notice-copy{flex:1;min-width:0}.notice-copy b{font-size:13px}.switch{flex:none;border:1px solid #cbdcff;border-radius:16px;background:white;color:var(--brand);padding:4px 10px;font-size:12px}.intro{margin-top:16px;padding:18px 16px;border:1px solid var(--line);border-radius:14px;background:#f8faff}.intro h2{font-size:18px;margin-bottom:10px}
+.examples{display:flex;align-items:center;gap:8px;overflow-x:auto;flex-wrap:nowrap;margin:0 0 10px;scrollbar-width:none}.examples::-webkit-scrollbar{display:none}.examples .label{flex:none;margin:0;font-size:11px}.example{flex:none;width:auto;margin:0;padding:6px 11px;border-radius:18px;font-size:12px;white-space:nowrap}.example span{display:none}
+.picker{position:absolute;inset:0;z-index:10;background:#17233b55;display:flex;align-items:flex-end}.picker[hidden]{display:none}.picker-panel{width:100%;padding:20px 18px 28px;background:white;border-radius:20px 20px 0 0}.picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.picker-head h3{margin:0;font-size:16px}.picker-head button{background:none;border:0;font-size:24px;color:var(--sub)}.option{display:block;width:100%;text-align:left;padding:12px;margin-top:8px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.option[aria-pressed="true"]{border-color:#a5c3ff;background:#f0f6ff;color:var(--brand)}
+.examples{flex:none;overflow:visible;margin:0;padding:10px 16px;gap:8px}.examples .example{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;display:block;text-align:left;padding:4px 0;border:0;border-radius:0;background:transparent;font-size:12px}.refresh-question{flex:none;width:30px;height:30px;border:0;border-radius:50%;background:#f0f5fc;color:#617da8;font-size:20px;line-height:1}.refresh-question:hover{background:#e4edfc;color:var(--brand)}footer{flex:none}
+.examples .example{padding:7px 11px;border:1px solid #cdddf5;border-radius:16px;background:#f5f8ff;color:#3260a1;transition:background .15s,border-color .15s}.examples .example:hover{background:#eaf2ff;border-color:#96b8ef}.examples .example:active{background:#dceaff}.examples .example:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.examples .example{padding:4px 0;border:0;border-radius:0;background:transparent;color:var(--brand);text-decoration:underline;text-underline-offset:3px}.examples .example:hover{background:transparent;color:#1054cc}.examples .example:active{background:transparent;color:#0b409f}
+.text-link{border:0;padding:0;background:transparent;color:var(--brand);text-decoration:underline;text-underline-offset:3px;font:inherit}.documents-page{position:absolute;z-index:8;inset:37px 0 0;background:white;display:flex;flex-direction:column}.documents-page[hidden]{display:none}.documents-body{flex:1;overflow:auto;padding:18px 16px}.document{padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:14px}.document h2{font-size:16px;margin:0 0 8px}.document p{white-space:pre-line;color:#52647e;font-size:13px;line-height:1.85;margin:0}.documents-note{font-size:12px;color:var(--sub);margin:0 0 16px}@media(max-width:480px){.documents-page{inset:37px 0 0}}
+.documents-body{padding:24px 22px}.document{border:0;border-radius:0;padding:0;margin:0}.document h2{font-size:21px;line-height:1.5;margin-bottom:18px}.document h3{font-size:15px;margin:24px 0 10px}.document p{margin:0 0 12px;line-height:1.95}
+.scroll{display:flex;flex-direction:column}.intro-group{flex:none}.scroll:has(#thread:empty) .intro-group{margin-block:auto}.scroll:has(#thread:empty) .intro{margin-top:0}
+.message.answer{width:100%}.message.answer>.bubble{width:calc(100% - 38px);max-width:none;white-space:normal;color:#243551;padding:2px 0 0}.answer ul{margin:6px 0 10px;padding-left:19px}.answer .answer-note{margin:8px 0;white-space:pre-line}.source-card{display:flex;align-items:center;gap:9px;width:100%;margin-top:10px;padding:10px;border:1px solid #dce6f4;border-radius:12px;background:#f8fbff;color:inherit;text-align:left;cursor:pointer}.source-icon{width:29px;height:32px;display:grid;place-items:center;flex:none;border-radius:7px;background:#e4efff;color:var(--brand);font-size:15px}.source-info{min-width:0;flex:1}.source-info b,.source-info span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.source-info b{font-size:12px}.source-info span{margin-top:3px;color:var(--sub);font-size:11px}.chevron{color:#93a1b6;font-size:20px}.source-mask{position:absolute;z-index:10;inset:0;background:rgba(17,31,54,.26);display:flex;align-items:flex-end}.source-mask[hidden]{display:none}.source-sheet{width:100%;max-height:71%;overflow:auto;padding:8px 18px 28px;border-radius:22px 22px 0 0;background:#fff;box-shadow:0 -8px 28px rgba(25,42,75,.12)}.handle{width:36px;height:4px;margin:0 auto 17px;border-radius:3px;background:#d8e0ea}.source-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.source-head h3{margin:0;font-size:17px}.source-head button{border:0;background:transparent;color:#8290a5;font-size:25px}.doc-meta{margin:11px 0 15px;color:#8c9bb0;font-size:12px}.excerpt{margin:0;padding:13px;border-radius:12px;background:#f6f9fd;color:#465a78;font-size:13px;line-height:1.8;white-space:pre-line}.full-doc{width:100%;height:42px;margin-top:17px;border:0;border-radius:11px;background:var(--brand);color:white;font-size:14px}
+.refresh-question{width:auto;height:auto;padding:4px 0;border:0;border-radius:0;background:transparent;color:var(--brand);font-size:12px;line-height:1.7;white-space:nowrap}.refresh-question:hover{background:transparent;color:#1054cc}
+.trial-button{display:block;margin-top:14px;padding:8px 20px;border:1px solid var(--brand);border-radius:18px;background:var(--brand);color:white;font-size:13px;line-height:1.5}.trial-button:hover{background:#1054cc}.trial-button:focus-visible{outline:2px solid #88b1ff;outline-offset:3px}
+.message.answer{align-items:flex-start}.message.answer>.bubble{min-width:0;flex:1;padding:2px 0 0}.answer .answer-title{margin:0 0 7px;line-height:1.65}.trial-button{width:84%;max-width:280px;margin:16px auto 0;padding:10px 20px;border:1px solid #c4e9dc;border-radius:18px;background:#e4f5ed;color:#218362;text-align:center}.trial-button:hover{background:#d5eee2}
+.trial-note{flex:none;margin:4px 16px 0;padding:7px 8px;border:1px solid #c4e9dc;border-radius:12px;background:#edf8f2;color:#36765f;font-size:11px;line-height:1.6;text-align:center;white-space:pre-line}.trial-note[hidden]{display:none}.message{flex-wrap:wrap;row-gap:4px}.message-time{order:3;flex:0 0 calc(100% - 38px);margin-left:38px;color:#98a3b4;font-size:10px;line-height:1.5}.user .message-time{margin-left:0;margin-right:38px;text-align:right}
+.square-page{position:absolute;z-index:9;inset:37px 0 0;background:#f4f7fb;display:flex;flex-direction:column}.square-page[hidden]{display:none}.square-page>header{background:white;flex:none}.agent-list{overflow:auto;flex:1;padding:16px;display:flex;flex-direction:column;gap:12px}.agent-card{width:100%;padding:16px;border:1px solid #e0e7f1;border-radius:14px;background:white;text-align:left;color:var(--ink)}.agent-top{display:flex;gap:12px;align-items:flex-start}.agent-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#e9f1ff;color:var(--brand);font-size:21px;flex:none}.agent-copy{flex:1;min-width:0}.agent-copy h2{font-size:15px;margin:0 0 5px}.agent-copy p{font-size:12px;line-height:1.7;color:var(--sub);margin:0}.agent-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--sub)}.agent-enter{color:var(--brand);font-size:12px}.agent-card.current{border-color:#afc9fa}.agent-card.current:hover{background:#f9fbff}.agent-card.upcoming .agent-icon{background:#f1f3f6;color:#8996a8}.agent-card.upcoming{cursor:default}
+.agent-detail{z-index:10}.detail-body{flex:1;overflow:auto;padding:16px}.detail-card{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}.detail-card h2{font-size:15px;margin:0 0 12px}.detail-card h3{font-size:14px;margin:0}.detail-card p{font-size:12px;color:var(--sub);margin:5px 0 0;line-height:1.8}.feature-item+.feature-item{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}.plan{padding:12px 0;border-top:1px solid var(--line)}.plan:first-of-type{border-top:0;padding-top:0}.plan-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.plan-price{font-size:13px;color:#187d68}.detail-actions{flex:none;display:flex;gap:10px;padding:12px 16px max(16px,env(safe-area-inset-bottom));background:white;border-top:1px solid var(--line)}.detail-actions button{flex:1;padding:10px 8px;border-radius:20px;border:1px solid #bed2f5;background:white;color:var(--brand);font-size:13px}.detail-actions .primary{background:var(--brand);border-color:var(--brand);color:white}.consult-note{padding:12px;border:1px solid #c4e9dc;background:#edf8f2;border-radius:10px;color:#36765f!important}.consult-note[hidden]{display:none}
+#enterKnowledge{cursor:default}button.agent-enter{border:0;background:transparent;padding:0;font:inherit;font-size:12px;color:var(--brand);cursor:pointer}.enter-dialog{flex:none;align-self:center;border:1px solid #bfd3f7;border-radius:16px;padding:6px 10px;background:#f0f6ff;color:var(--brand);font-size:12px;white-space:nowrap}.enter-dialog:hover{background:#e4efff}#enterKnowledge .agent-top{gap:9px}#enterKnowledge .agent-copy p{font-size:11px}
+.sales-card .agent-top{gap:9px}.sales-card .agent-copy p{font-size:11px}.assistant-entitlement{display:block;color:#71809a;font-size:11px;margin-top:4px}
+.profile-area{flex:none;margin:10px 16px 0}.profile-area[hidden],.intro-group[hidden]{display:none}.profile-card{padding:12px;border:1px solid #dfe7f3;border-radius:14px;background:linear-gradient(106deg,#f7faff,#fff);box-shadow:0 4px 12px rgba(30,60,108,.05)}.profile-head{display:flex;align-items:center;gap:10px}.profile-avatar{width:40px;height:40px;display:grid;place-items:center;flex:none;border-radius:13px;background:linear-gradient(135deg,#287cff,#0755d9);color:white;font-size:17px;font-weight:700}.profile-main{min-width:0;flex:1}.profile-name{display:flex;align-items:center;gap:6px;font-size:14px}.status-dot{width:7px;height:7px;border-radius:50%;background:#22a87a}.profile-main span{display:block;margin-top:4px;color:var(--sub);font-size:11px}.portrait{margin:10px 0 0;padding-top:10px;border-top:1px solid #e9eef5;color:#52637d;font-size:12px;line-height:1.6}.member-contract{margin-top:10px;padding-top:9px;border-top:1px solid #e9eef5;color:#52637d;font-size:11px}.member-contract p{margin:3px 0}.reply-card{margin-top:10px;padding:11px;border:1px solid #dce6f4;border-radius:12px;background:#f8fbff}.reply-card small{display:block;margin-bottom:5px;color:var(--sub);font-size:11px}.reply-card p{margin:0;color:#314869;font-size:13px;line-height:1.7}
+.profile-toggle{display:block;width:100%;margin-top:8px;padding:4px 0 0;border:0;border-top:1px solid #e9eef5;background:transparent;color:#71809a;font-size:11px;text-align:center}.profile-details[hidden]{display:none}.member-picker{position:absolute;z-index:12;inset:0;display:flex;align-items:flex-end;background:#17233b55}.member-picker[hidden]{display:none}.member-choice{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:white;text-align:left;color:var(--ink)}.member-choice span{font-size:12px;color:var(--sub)}.member-choice[aria-pressed="true"]{border-color:#afc9fa;background:#f3f7ff}
+.follow-record-button{margin-top:12px;padding:8px 13px;border:1px solid #bdd3f5;border-radius:16px;background:#f0f6ff;color:var(--brand);font-size:12px}.follow-record-button:disabled{color:#36765f;background:#edf8f2;border-color:#c4e9dc;cursor:default}.follow-record{margin-top:10px;padding:12px;border:1px solid #c4e9dc;border-radius:12px;background:#f3faf6;font-size:12px;white-space:pre-line;line-height:1.8}
+header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.history-button) h1{padding-left:28px}.history-button{border:0;background:transparent;color:var(--brand);font-size:12px;padding:8px 0;white-space:nowrap}.history-mask{position:absolute;inset:0;z-index:30;background:#17233b55;opacity:0;visibility:hidden;transition:opacity .24s,visibility .24s}.history-mask.is-open{opacity:1;visibility:visible}.history-panel{position:absolute;right:0;top:0;bottom:0;width:80%;background:white;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .24s ease;box-shadow:-8px 0 30px #17233b18}.history-mask.is-open .history-panel{transform:translateX(0)}.history-head{display:flex;align-items:center;justify-content:space-between;padding:20px 16px;border-bottom:1px solid var(--line)}.history-head h2{font-size:17px;margin:0}.history-close{width:32px;height:32px;border:0;background:transparent;color:var(--sub);font-size:26px}.history-list{flex:1;overflow:auto;padding:12px}.history-item{display:block;width:100%;padding:13px 10px;text-align:left;border:0;border-bottom:1px solid var(--line);background:white;color:var(--ink)}.history-item:hover{background:#f4f8ff}.history-item b{display:block;font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.history-item time{display:block;margin-top:5px;font-size:11px;color:var(--sub)}.history-empty{text-align:center;color:var(--sub);font-size:13px;margin:40px 0}@media(prefers-reduced-motion:reduce){.history-mask,.history-panel{transition:none}}
+.history-head{gap:8px;padding:18px 12px 12px;border:0}.history-search{flex:1;min-width:0;width:100%;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 11px;color:var(--sub);font:inherit;font-size:13px;cursor:text}.history-new{margin:0 16px 12px;padding:10px;border:1px solid #d4e3ff;border-radius:10px;background:#f1f6ff;color:var(--brand);font:inherit}.history-item[aria-current="true"]{background:#edf4ff;color:var(--brand)}.history-list{border-top:1px solid var(--line)}
+.history-button{display:grid;place-items:center;justify-self:end;width:40px;height:40px;padding:0;border-radius:50%}.history-button:hover{background:#f0f5fc}
+.history-item{display:flex;align-items:center;gap:10px}.history-item-copy{flex:1;min-width:0}
+.demo-layout{position:relative}.version-tabs{position:absolute;right:calc(100% + 24px);top:110px;width:132px;display:flex;flex-direction:column;gap:10px}.version-tab{padding:11px 14px;border:1px solid #cdd9eb;border-radius:10px;background:white;color:#52647e;white-space:nowrap}.version-tab[aria-pressed="true"]{border-color:var(--brand);background:#edf4ff;color:var(--brand);font-weight:600}.version-tab:focus-visible{outline:2px solid var(--brand);outline-offset:3px}@media(max-width:740px){body{display:block}.demo-layout{width:max-content;min-width:100%;display:flex;align-items:flex-start;gap:12px;padding:12px}.version-tabs{position:static;width:104px;flex:none;padding-top:90px}.demo-layout .app{flex:none}.version-tab{padding:10px 8px}} 
+.trial-steps{display:none;padding:20px 4px}.trial-steps h2{font-size:18px;margin:0 0 18px}.usage-step{display:flex;gap:12px;margin:0 0 14px}.step-number{flex:none;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#e8f1ff;color:#61799b;font-size:12px}.step-copy{min-width:0}.step-copy h3{font-size:14px;margin:0 0 3px}.step-copy p{font-size:12px;color:#61799b;line-height:1.7;margin:0 0 5px}.step-copy button{font-size:12px}.app:is([data-version="trial"],[data-version="formal"]) .intro-group>.intro,.app:is([data-version="trial"],[data-version="formal"]) .intro-group>.disclaimer,.app:is([data-version="trial"],[data-version="formal"]) #trialNote{display:none}.app:is([data-version="trial"],[data-version="formal"]) .trial-steps{display:block}
+.history-button:disabled{color:#b3bdcc;cursor:default}.history-button:disabled:hover{background:transparent}
+.history-agent-icon{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#e9f1ff;color:var(--brand);font-size:16px}
+.history-search-page{position:absolute;inset:0;z-index:35;background:white;display:flex;flex-direction:column}.history-search-page[hidden]{display:none}.search-page-head{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--line)}.search-page-head input{flex:1;min-width:0;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 10px;font:inherit}.search-page-results{flex:1;overflow:auto;padding:12px}
+.search-cancel{flex:none;border:0;background:transparent;color:var(--brand);padding:6px;font:inherit}.search-history-heading{font-size:14px;margin:8px 0 14px}.search-history-terms{display:flex;flex-wrap:wrap;gap:10px}.search-history-term{border:0;border-radius:16px;background:#f1f4f8;color:#52647e;font-size:13px;padding:6px 13px}
+.search-history-terms{display:flex;flex-direction:column;gap:0}.search-history-card{display:flex;align-items:center;gap:10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:6px 0}.search-history-card .search-history-term{flex:1;min-width:0;text-align:left;background:transparent;border-radius:0;padding:10px 2px;overflow-wrap:anywhere}.search-history-delete{flex:none;display:grid;place-items:center;width:36px;height:36px;border:0;background:transparent;color:#000;font-size:24px;line-height:1;padding:0}.search-history-delete:hover{color:#000}
+.history-head{align-items:center}.history-head .history-search{position:relative;top:0;align-self:center;display:flex;align-items:center;line-height:1.4}.history-head .history-close{display:grid;place-items:center;align-self:center;height:38px;padding:0;line-height:1}
+.knowledge-summary .agent-top{align-items:center}.knowledge-summary .agent-copy h2{margin:0}.knowledge-summary .knowledge-description{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.usage-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.usage-heading h2{margin:0}.usage-heading .text-link{font-size:12px;flex:none}
+.trial-note-actions{display:flex;justify-content:flex-end;margin-bottom:4px}.trial-note p{margin:0}.trial-note .text-link{font-size:11px}
+
+.scroll:has(#thread .message) .trial-steps{display:none}
+.message.answer>.bubble.quota-error{padding:10px 12px;border:1px solid #f1c4c4;border-radius:10px;background:#fff4f3;color:#c43d3d;white-space:normal}
+</style>
+</head>
+<body>
+<div class="demo-layout"><nav class="version-tabs" aria-label="演示版本"><button type="button" class="version-tab" data-version="preview" aria-pressed="true">管理员 预览版</button><button type="button" class="version-tab" data-version="trial" aria-pressed="false">正式版</button></nav>
+<main class="app" data-version="preview">
+<div class="speaker"></div><div class="status"><span>9:41</span><span class="status-icons">▮▮▮ ◔ ▰</span></div>
+<header><button class="back" id="back" aria-label="返回">‹</button><h1>菠菜 Ai</h1><button class="history-button" id="openHistory" disabled aria-controls="historyMask" aria-expanded="false" aria-label="对话历史" title="对话历史"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.6 7.4"/><path d="M3 4v7h7"/><path d="M12 7v5l3 2"/></svg></button></header>
+<section class="notice"><div class="symbol">✦</div><div class="notice-copy"><b id="sceneName">知识库（预览版）</b><span>您的场馆运营资料百事通</span></div><button class="switch" id="switch" aria-haspopup="dialog">详情</button></section>
+<section class="profile-area" id="salesProfile" aria-label="当前跟进会员" hidden><article class="profile-card"><div class="profile-head"><div class="profile-avatar" id="memberAvatar">演</div><div class="profile-main"><div class="profile-name"><b id="memberName">演示会员</b><i class="status-dot" aria-label="有效会员"></i></div><span id="memberInfo">女 · 9 岁 · 有效会员</span></div><button class="switch" id="switchMember">切换</button></div><div class="profile-details" id="profileDetails"><p class="portrait">用户画像：持续参课；近期状态稳定；可在课程结束后关注学习感受与后续安排。</p><div class="member-contract"><p>最近使用：少儿游泳进阶班次卡 · 2026-10-15</p></div></div><button class="profile-toggle" id="toggleProfile" aria-expanded="true" aria-controls="profileDetails">收起 ∧</button></article></section>
+<div class="member-picker" id="memberPicker" hidden><section class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="memberPickerTitle"><div class="picker-head"><h3 id="memberPickerTitle">切换跟进会员</h3><button id="closeMemberPicker" aria-label="关闭">×</button></div><button class="member-choice" data-member="0" aria-pressed="true"><b>演示会员</b><span>女 · 9 岁 · 有效会员</span></button><button class="member-choice" data-member="1" aria-pressed="false"><b>示例会员</b><span>男 · 10 岁 · 有效会员</span></button></section></div>
+<section class="scroll" id="scroll">
+ <div class="intro-group">
+ <section class="trial-steps" aria-label="使用步骤"><h2>使用步骤</h2><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>上传文件</h3><p>请联系场馆管理员前往电脑端上传知识库文件。</p><button class="text-link" id="trialManual">查看操作手册</button></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>发起问答</h3><p>文件上传完成后，场馆工作人员即可在手机端输入问题并查询知识库内容。</p></div></div></section>
+ <div class="intro"><div class="symbol">✦</div><h2>有问题，问问知识库</h2><p>把业务资料变成随时可查的知识。
+输入问题，快速获得回答和资料出处。</p></div>
+ <p class="disclaimer" style="margin:10px 4px 0;text-align:center">体验模式-尚未接通您场馆专属的知识空间<br>当前演示基于 <button class="text-link" id="openDocuments">示例资料</button></p>
+ </div>
+ <div id="thread" role="log" aria-live="polite" aria-label="体验对话"></div>
+</section>
+<div class="trial-note" id="trialNote" hidden>请前往电脑端，开启功能后正式使用。</div>
+<div class="examples" id="suggestions" aria-label="建议提问"></div>
+<footer><form id="form"><div class="input"><textarea id="query" rows="1" maxlength="500" placeholder="输入问题，感受问答效果" aria-label="问题"></textarea><button id="send" disabled>发送</button></div></form></footer>
+<section class="square-page agent-detail" id="salesDetail" aria-label="销售助手详情" hidden>
+<header><button class="back" id="closeSalesDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
+<div class="detail-body">
+<section class="detail-card"><div class="agent-top"><span class="agent-icon">◎</span><div class="agent-copy"><h2>销售助手</h2><p>协助您制定会员跟进与续费策略</p></div></div><p>围绕单个会员了解近况、分析需求，帮助销售安排下一步跟进。</p></section>
+<section class="detail-card"><h2>核心能力</h2><div class="feature-item"><h3>了解会员近况</h3><p>查询会员最近上课、签课及合同剩余等信息，为沟通提供参考。</p></div><div class="feature-item"><h3>根据画像提供跟进建议</h3><p>结合会员画像与使用情况，给出跟进、续费策略及参考话术。</p></div><div class="feature-item"><h3>分析反馈并整理跟进</h3><p>销售补充会员近况后，先给出基础分析，再通过“整理内容并计入跟进”生成跟进记录。</p></div></section>
+<section class="detail-card"><h2>当前权益</h2><div class="plan-head"><h3>基础版</h3><span class="plan-price">365 天</span></div><p>场馆统一计算总用量，不单独分配员工账号额度。</p></section>
+<section class="detail-card"><h2>价格与升级</h2><p>基础版价格待定。需要更高用量或定制能力时，请联系菠菜工作人员了解方案及报价。</p></section>
+</div><div class="detail-actions"><button class="primary" id="salesDetailChat">进入对话</button></div>
+</section>
+<section class="square-page agent-detail" id="agentDetail" aria-label="智能体详情" hidden>
+<header><button class="back" id="closeDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
+<div class="detail-body">
+<section class="detail-card knowledge-summary"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库（预览版）</h2></div></div><p class="knowledge-description">将场馆的制度、服务规范变成可随时查询的知识。<br>员工直接提问，即可根据资料获取回答，并查看出处。</p></section>
+<section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>新人培训少些重复讲解</h3><p>将员工手册、岗位职责和操作指南放入知识库，新人遇到问题随时查询，减少重复答疑。</p></div><div class="feature-item"><h3>门店执行有统一依据</h3><p>集中提供服务标准、巡检要求和应急预案，员工按需查阅，让日常执行有章可循。</p></div><div class="feature-item"><h3>运营经验留下来、用起来</h3><p>将运营方案、培训材料和经验总结集中沉淀，方便员工查找和复用，减少对个人记忆的依赖。</p></div></section>
+<section class="detail-card"><div class="usage-heading"><h2>使用步骤</h2><button class="text-link" id="detailManual">操作手册</button></div><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>管理员上传资料</h3><p>在电脑端上传各类规范文件。</p></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>员工直接提问</h3><p>打开手机端，输入问题，获得 ai 回复。</p></div></div></section>
+</div>
+
+</section>
+<section class="documents-page" id="documentsPage" aria-label="示例资料浏览" hidden><header><button class="back" id="closeDocuments" aria-label="返回对话">‹</button><h1>示例资料</h1><span></span></header><div class="documents-body"><article class="document">
+<h2>场馆日常业务操作指南</h2>
+<p>本指南供场馆工作人员在日常服务中查阅，涵盖会员卡推荐、私教课消课和会员投诉处理三个环节。
+工作人员应先了解会员需求，再根据实际权益和服务完成情况开展业务，并对服务中的问题做好记录与反馈。</p>
+<h3>一、会员卡推荐</h3>
+<p>会员咨询办卡时，销售顾问应先了解会员的运动目标、预计到店频次和预算范围。
+在确认需求后，介绍适合的会员卡及其已确认的权益，帮助会员判断方案是否适合自己。</p>
+<p>如果会员对价格、时间或课程安排有顾虑，应先了解具体原因，再结合实际情况进行回应。
+沟通过程中，不承诺资料中未确认的优惠或服务。</p>
+<h3>二、私教课消课</h3>
+<p>会员预约私教课后，工作人员应在消课前核对会员、教练和预约课程信息。
+确认会员已到店并完成本次课程服务，且相关信息无误后，再进行消课。</p>
+<p>如果会员未到店，或本次课程服务尚未完成，应登记异常并按异常流程处理，不得直接消课。</p>
+<h3>三、会员投诉处理</h3>
+<p>在办卡、课程或其他服务过程中收到会员投诉时，工作人员应先倾听会员反馈，确认具体问题，并记录相关情况。
+投诉登记与初步回应应在当天完成。</p>
+<p>登记后，根据问题类型和影响范围，交由对应负责人处理。
+处理期间向会员同步进展，处理完成后反馈结果，并归档处理记录。</p>
+<p>从需求沟通到课程服务，再到问题处理，各环节均应以实际业务情况为依据，确保服务信息清楚、操作有据、问题有反馈。</p>
+</article></div></section>
+<div class="source-mask" id="sourceMask" hidden><section class="source-sheet" role="dialog" aria-modal="true" aria-labelledby="sourceTitle"><div class="handle"></div><div class="source-head"><h3 id="sourceTitle">场馆日常业务操作指南</h3><button id="closeSource" aria-label="关闭资料引用">×</button></div><p class="doc-meta" id="sourceMeta"></p><p class="excerpt" id="sourceExcerpt"></p><button class="full-doc" id="viewSource">查看源文件</button></section></div>
+<div class="history-mask" id="historyMask" inert aria-hidden="true"><section class="history-panel" role="dialog" aria-modal="true" aria-label="对话历史"><div class="history-head"><button class="history-search" id="historySearch" type="button" style="text-align:left" aria-label="搜索对话记录">搜索对话记录</button><button class="history-close" id="closeHistory" aria-label="关闭对话历史">×</button></div><button class="history-new" id="newHistoryChat">＋ 新对话</button><div class="history-list" id="historyList"></div></section></div>
+<section class="history-search-page" id="historySearchPage" aria-label="搜索对话记录" hidden><div class="status"><span>9:41</span><span class="status-icons">▮▮▮ ◔ ▰</span></div><div class="search-page-head"><input id="historyKeyword" type="search" placeholder="搜索对话记录" aria-label="输入对话关键词"><button class="search-cancel" id="backHistorySearch">取消</button></div><div class="search-page-results" id="historySearchResults" aria-live="polite"></div></section>
+<div class="toast" id="toast" role="status" hidden></div>
+</main></div>
+<script>
+const query=document.getElementById('query'),send=document.getElementById('send'),thread=document.getElementById('thread'),scrollArea=document.getElementById('scroll');
+const materials=[
+ {match:/投诉|客诉|不满/,title:'会员投诉可以这样处理：',body:'1. 先倾听并记录会员反馈，确认具体问题。\n2. 当天完成投诉登记与初步回应。\n3. 根据问题类型和影响范围，交由对应负责人处理。\n4. 向会员同步处理进展和结果，并归档处理记录。',source:'门店会员投诉处理流程'},
+ {match:/会员卡|推荐|办卡|销售|预算/,title:'推荐前，先了解会员的实际需求：',body:'1. 了解运动目标、预计到店频次和预算。\n2. 根据需求介绍适合的会员卡及已确认的权益。\n3. 了解会员对价格、时间或课程安排的顾虑，再针对性回应。\n\n不要承诺资料中未确认的优惠或服务。',source:'销售顾问会员卡推荐话术'},
+ {match:/私教|消课|核销|教练/,title:'私教课消课前，需要完成以下确认：',body:'1. 核对会员、教练和预约课程信息。\n2. 确认会员已到店，并完成本次课程服务。\n3. 信息无误后，再进行消课。\n\n会员未到店或课程未完成时，应登记异常并按流程处理，不直接消课。',source:'私教课消课操作指引'}
+];
+let busy=false,completedRounds=0,activeAssistant='knowledge';
+const assistantStates={knowledge:{nodes:[],rounds:0,draft:'',scroll:0},sales:{nodes:[],rounds:0,draft:'',scroll:0}};
+materials.forEach((material,index)=>{material.source='场馆日常业务操作指南 · '+['三、会员投诉处理','一、会员卡推荐','二、私教课消课'][index];material.sliceName=['投诉受理与处理反馈','会员需求确认与推荐沟通','消课前核对与异常处理'][index]});
+const documentsPage=document.getElementById('documentsPage');
+document.getElementById('openDocuments').addEventListener('click',()=>{documentsPage.hidden=false;document.getElementById('closeDocuments').focus()});
+document.getElementById('closeDocuments').addEventListener('click',()=>{documentsPage.hidden=true;document.getElementById('openDocuments').focus()});
+function sync(){send.disabled=busy||!query.value.trim();query.style.height='34px';query.style.height=Math.min(query.scrollHeight,96)+'px'}
+function bottom(){scrollArea.scrollTop=scrollArea.scrollHeight}
+function addMessageTime(row){const now=new Date();const time=document.createElement('time');time.className='message-time';time.dateTime=now.toISOString();time.textContent=now.toLocaleTimeString('zh-CN',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false});row.append(time)}
+function message(kind,text){const row=document.createElement('div');row.className='message '+kind;const avatar=document.createElement('span');avatar.className='avatar';avatar.textContent=kind==='user'?'我':'✦';row.append(avatar);const bubble=document.createElement('div');bubble.className='bubble';bubble.textContent=text;row.append(bubble);if(kind==='user')addMessageTime(row);thread.append(row);return {row,bubble}}
+function ask(text){text=text.trim();if(!text||busy)return;if(activeAssistant==='sales'&&completedRounds===0)setProfileCollapsed(true);busy=true;syncTrialNote();message('user',text);syncTrialNote();query.value='';sync();const pending=message('answer',activeAssistant==='sales'?'正在分析该会员的跟进情况':'正在查找示例资料');pending.bubble.classList.add('thinking');thread.setAttribute('aria-busy','true');bottom();setTimeout(()=>{pending.row.remove();const answer=message('answer','');if(completedRounds>=2){answer.bubble.classList.add('quota-error');answer.bubble.setAttribute('role','alert');answer.bubble.textContent='额度不足，请联系管理员扩充额度';}else if(activeAssistant==='sales'){renderSalesReply(answer.bubble,text)}else{const result=materials.find(item=>item.match.test(text));if(result){renderReply(answer.bubble,result)}else{answer.bubble.textContent='示例资料中暂未找到相关内容。当前支持体验会员投诉、会员卡推荐和私教消课相关问题，你可以换一个问题试试。'}}addMessageTime(answer.row);completedRounds++;busy=false;thread.setAttribute('aria-busy','false');sync();bottom()},850)}
+function renderSalesReply(bubble,text){
+ const memberName=document.getElementById('memberName').textContent;
+ const asksAdvice=/建议|策略|怎么|如何|适合|下一步|跟进吗/.test(text);
+ const reportsUpdate=/说|反馈|表示|提到|告诉|沟通后|聊过|了解到|最近.{0,12}(忙|没空|没来|不来|请假|生病|出差|搬家|不想|想|觉得|计划)|今天.{0,12}(联系|沟通|聊)/.test(text)||(!asksAdvice&&!/[？?]|查询|查看|了解|情况如何|信息|剩余多少/.test(text)&&text.length>12);
+ const mode=reportsUpdate?'report':asksAdvice?'advice':'status';
+ const title=document.createElement('p');title.className='answer-title';
+ const body=document.createElement('p');body.className='answer-note';
+ if(mode==='status'){
+  title.textContent=memberName+'的近况如下：';
+  body.textContent='最近上课：2026-10-15 10:00，少儿游泳进阶班，已完成本次课程。\n最近签课：2026-10-15，本次签课扣减 1 节；近两周共完成 3 次课程签到。\n合同剩余：少儿游泳进阶班次卡，剩余 10 节。\n下一次课程：周六 10:00。\n\n以上为演示会员数据。你可以继续询问跟进建议，或补充刚了解到的会员近况。';
+  bubble.append(title,body);return;
+ }
+ let advice,opening;
+ if(mode==='advice'){
+  const renewal=/续|到期/.test(text);
+  title.textContent='结合这位会员的画像，建议这样跟进：';
+  body.textContent='基础判断：会员持续参课、近期状态稳定，当前合同仍有 10 节，适合先维护课程体验，再了解后续学习目标。\n\n1. 在本次课程后向家长了解孩子的学习感受。\n2. 结合教练反馈，确认希望加强的内容。\n3. 记录家长对时间、效果及后续安排的顾虑。\n'+(renewal?'4. 本次先了解续班意向，不急于催促付款；剩余 4 至 6 节时再结合实际进度沟通方案。':'4. 根据真实反馈确定下次联系时间，再决定是否进入续费沟通。');
+  opening='您好，孩子最近在进阶班的参课比较稳定，想了解一下近期上课后的感受。接下来有没有特别希望加强的内容？我们可以结合课程表现一起看看后续安排。';
+ }else{
+  const price=/贵|价格|预算|费用/.test(text),schedule=/忙|没空|时间|请假|出差/.test(text),positive=/满意|喜欢|愿意|想续|有意向/.test(text);
+  advice=price?'先确认家长的预算和对课程价值的具体顾虑，再介绍已确认的方案；不自行承诺优惠。':schedule?'先了解时间冲突会持续多久，确认可接受的上课安排，再约定下一次联系时间；暂缓直接催促续费。':positive?'先确认后续学习目标和时间安排，再核对可提供的续班方案；将积极反馈作为意向线索，不等同于已确认购买。':'先追问具体原因、影响和期望安排，再据此调整跟进策略；补充信息尚不足以判断续费意向。';
+  title.textContent='根据你补充的近况，先做以下分析：';
+  body.textContent='本次反馈：'+text+'\n\n基础分析：这条信息补充了原有画像，需要结合会员实际反馈调整跟进节奏，不直接推定会员会续费或流失。\n\n跟进建议：'+advice;
+  opening=price?'了解到您对费用有些顾虑，方便说说主要是预算安排，还是对课程效果有疑问？我先了解清楚，再一起看看合适的安排。':schedule?'了解到最近时间安排有些紧张，想确认一下这种情况大概会持续多久？我们先看看后续课程怎么安排更合适。':'谢谢您反馈近况，方便再说说目前最关注的事情，以及希望我们协助的安排吗？';
+ }
+ bubble.append(title,body);
+ const card=document.createElement('div');card.className='reply-card';const label=document.createElement('small');label.textContent='沟通话术参考';const copy=document.createElement('p');copy.textContent=opening;card.append(label,copy);bubble.append(card);
+ if(mode==='report'){
+  const button=document.createElement('button');button.className='follow-record-button';button.textContent='整理内容并计入跟进';
+  button.addEventListener('click',()=>{if(button.disabled)return;const record=document.createElement('div');record.className='follow-record';record.setAttribute('role','status');record.textContent='跟进记录（演示）\n会员：'+memberName+'\n会员近况：'+text+'\n后续跟进建议：'+advice+'\n记录时间：'+new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false});bubble.append(record);button.disabled=true;button.textContent='已计入跟进（演示）';bottom()});bubble.append(button);
+ }
+}
+const sourceMask=document.getElementById('sourceMask');let activeSourceButton=null,activeChapter='';
+function renderReply(bubble,result){const title=document.createElement('p');title.className='answer-title';title.textContent=result.title;const list=document.createElement('ul');const notes=[];result.body.split('\n').filter(Boolean).forEach(line=>{if(/^\d+\./.test(line)){const item=document.createElement('li');item.textContent=line.replace(/^\d+\.\s*/,'');list.append(item)}else notes.push(line)});bubble.append(title,list);if(notes.length){const note=document.createElement('p');note.className='answer-note';note.textContent=notes.join('\n');bubble.append(note)}const source=document.createElement('button');source.className='source-card';source.innerHTML='<span class="source-icon">▤</span><span class="source-info"><b>场馆日常业务操作指南</b><span></span></span><span class="chevron">›</span>';const chapter=result.source.split(' · ')[1];source.querySelector('.source-info span').textContent='示例资料 · '+chapter;source.addEventListener('click',()=>{activeSourceButton=source;activeChapter=chapter;document.getElementById('sourceMeta').textContent=result.sliceName;const headings=[...documentsPage.querySelectorAll('h3')];const heading=headings.find(item=>item.textContent===chapter);const paragraphs=[];for(let next=heading?.nextElementSibling;next&&next.tagName!=='H3';next=next.nextElementSibling){paragraphs.push(next.textContent)}document.getElementById('sourceExcerpt').textContent=paragraphs.join('\n\n');sourceMask.hidden=false;document.getElementById('closeSource').focus()});bubble.append(source)}
+function closeSource(){sourceMask.hidden=true;activeSourceButton?.focus()}
+document.getElementById('closeSource').addEventListener('click',closeSource);
+sourceMask.addEventListener('click',event=>{if(event.target===sourceMask)closeSource()});
+document.getElementById('viewSource').addEventListener('click',()=>{closeSource();documentsPage.hidden=false;const heading=[...documentsPage.querySelectorAll('h3')].find(item=>item.textContent===activeChapter);heading?.scrollIntoView({block:'start'});document.getElementById('closeDocuments').focus()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!sourceMask.hidden)closeSource()});
+query.addEventListener('input',sync);
+document.getElementById('back').addEventListener('click',()=>{if(history.length>1){history.back();return}const toast=document.getElementById('toast');toast.textContent='当前为独立演示页，暂无上一页';toast.hidden=false;setTimeout(()=>toast.hidden=true,2000)});
+query.addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing){event.preventDefault();ask(query.value)}});
+document.getElementById('form').addEventListener('submit',event=>{event.preventDefault();ask(query.value)});
+const questions=['会员投诉应该如何处理？','如何推荐合适的会员卡？','私教课怎样进行消课？'];
+const sceneQuestions=[questions,[questions[0],'接到会员客诉后要记录哪些信息？','如何向会员反馈投诉处理进展？'],['了解这位会员的近况、签课和合同剩余信息','根据会员画像，下一步怎么跟进？','家长说最近比较忙，暂时不考虑续费'],[questions[2],'私教课核销前需要核对什么？','会员未到店，能直接消课吗？']];
+let suggestionScene=0,suggestionIndex=0;
+function showSuggestions(scene){suggestionScene=scene;suggestionIndex=0;const box=document.getElementById('suggestions');box.replaceChildren();const label=document.createElement('div');label.className='label';label.textContent='可以试试';const question=document.createElement('button');question.className='example';question.id='suggestedQuestion';question.textContent=sceneQuestions[scene][0];question.addEventListener('click',()=>ask(question.textContent));const refresh=document.createElement('button');refresh.className='refresh-question';refresh.textContent='换一换';refresh.title='换一换';refresh.setAttribute('aria-label','换一换建议提问');refresh.addEventListener('click',()=>{suggestionIndex=(suggestionIndex+1)%sceneQuestions[suggestionScene].length;question.textContent=sceneQuestions[suggestionScene][suggestionIndex]});box.append(label,question,refresh)}
+const switchButton=document.getElementById('switch');
+switchButton.setAttribute('aria-haspopup','false');
+switchButton.addEventListener('click',()=>{const sales=activeAssistant==='sales';(sales?salesDetail:agentDetail).hidden=false;document.getElementById(sales?'closeSalesDetail':'closeDetail').focus()});
+const agentDetail=document.getElementById('agentDetail');
+const salesDetail=document.getElementById('salesDetail');
+function closeSalesDetail(){salesDetail.hidden=true;switchButton.focus()}
+document.getElementById('closeSalesDetail').addEventListener('click',closeSalesDetail);
+document.getElementById('salesDetailChat').addEventListener('click',()=>{if(busy)return;salesDetail.hidden=true;enterAssistant('sales')});
+function closeDetail(){agentDetail.hidden=true;switchButton.focus()}
+function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;syncTrialNote();query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();updateVersionView();scrollArea.scrollTop=state.scroll}
+document.getElementById('closeDetail').addEventListener('click',closeDetail);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail()}});
+let selectedMember=0;
+const memberChats=[{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false},{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false}];
+function setProfileCollapsed(collapsed){document.getElementById('profileDetails').hidden=collapsed;const toggle=document.getElementById('toggleProfile');toggle.textContent=collapsed?'展开 ∨':'收起 ∧';toggle.setAttribute('aria-expanded',String(!collapsed));memberChats[selectedMember].collapsed=collapsed}
+document.getElementById('toggleProfile').addEventListener('click',()=>setProfileCollapsed(!document.getElementById('profileDetails').hidden));
+const memberPicker=document.getElementById('memberPicker');
+function closeMemberPicker(){memberPicker.hidden=true;document.getElementById('switchMember').focus()}
+document.getElementById('switchMember').addEventListener('click',()=>{if(busy)return;memberPicker.hidden=false;memberPicker.querySelector('[aria-pressed="true"]').focus()});
+document.getElementById('closeMemberPicker').addEventListener('click',closeMemberPicker);
+memberPicker.addEventListener('click',event=>{if(event.target===memberPicker)closeMemberPicker()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!memberPicker.hidden)closeMemberPicker()});
+memberPicker.querySelectorAll('[data-member]').forEach(button=>button.addEventListener('click',()=>{if(busy)return;const next=Number(button.dataset.member);if(next!==selectedMember){Object.assign(memberChats[selectedMember],{nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop});selectedMember=next;const state=memberChats[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;document.getElementById('memberName').textContent=button.querySelector('b').textContent;document.getElementById('memberInfo').textContent=button.querySelector('span').textContent;document.getElementById('memberAvatar').textContent=next===0?'演':'示';setProfileCollapsed(state.collapsed);showSuggestions(2);sync();updateVersionView();scrollArea.scrollTop=state.scroll}memberPicker.querySelectorAll('[data-member]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));closeMemberPicker()}));
+const historyMask=document.getElementById('historyMask'),historyButton=document.getElementById('openHistory'),historyList=document.getElementById('historyList');
+const demoHistory=[
+ {
+  "title": "会员投诉的处理流程",
+  "assistant": "knowledge",
+  "date": "2026-10-18 16:30",
+  "messages": [
+   [
+    "user",
+    "会员投诉应该如何处理？"
+   ],
+   [
+    "answer",
+    "先倾听并记录会员反馈，确认具体问题。\n当天完成投诉登记与初步回应。\n根据问题类型和影响范围，交由对应负责人处理，并持续同步处理进展。"
+   ],
+   [
+    "user",
+    "登记时需要记录哪些内容？"
+   ],
+   [
+    "answer",
+    "记录投诉时间、会员信息、问题描述、涉及人员和会员诉求，便于负责人跟进处理。"
+   ]
+  ]
+ },
+ {
+  "title": "私教课消课前的核对事项",
+  "assistant": "knowledge",
+  "date": "2026-10-17 18:20",
+  "messages": [
+   [
+    "user",
+    "私教课怎样进行消课？"
+   ],
+   [
+    "answer",
+    "核对会员、教练和预约课程信息，确认会员已到店并完成本次课程服务后，再进行消课。"
+   ],
+   [
+    "user",
+    "会员未到店，能直接消课吗？"
+   ],
+   [
+    "answer",
+    "不能直接消课。\n应登记未到店情况，并按实际业务流程处理异常。"
+   ]
+  ]
+ }
+];
+let activeHistory=null;
+function closeHistory(){historyMask.classList.remove('is-open');historyMask.inert=true;historyMask.setAttribute('aria-hidden','true');historyButton.setAttribute('aria-expanded','false');historyButton.focus()}
+function rememberHistory(){if(activeHistory&&activeAssistant===activeHistory.assistant){activeHistory.nodes=[...thread.childNodes];activeHistory.rounds=completedRounds;activeHistory.draft=query.value}}
+function loadHistory(record){
+ if(busy)return;
+ rememberHistory();
+ const targetAssistant=record?.assistant||activeAssistant;
+ if(activeAssistant!==targetAssistant)enterAssistant(targetAssistant);
+ activeHistory=record;thread.replaceChildren();query.value=record?.draft||'';
+ if(record?.nodes){thread.append(...record.nodes);completedRounds=record.rounds}else if(record){record.messages.forEach(([kind,text],index)=>{const entry=message(kind,text);if(kind==='answer')addMessageTime(entry.row);const time=entry.row.querySelector('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00'});completedRounds=record.messages.filter(([kind])=>kind==='answer').length}else{completedRounds=0}
+ syncTrialNote();
+ if(activeAssistant==='sales')setProfileCollapsed(completedRounds>0);
+ thread.setAttribute('aria-busy','false');sync();closeHistory();bottom();
+}
+function renderHistory(){historyList.replaceChildren();demoHistory.forEach(record=>{const item=document.createElement('button');item.className='history-item';item.setAttribute('aria-current',String(activeHistory===record));const title=document.createElement('b');title.textContent=record.title;const time=document.createElement('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00';const copy=document.createElement('span');copy.className='history-item-copy';copy.append(title);const icon=document.createElement('span');icon.className='history-agent-icon';icon.setAttribute('aria-hidden','true');icon.textContent='✦';item.append(icon,copy);item.addEventListener('click',()=>loadHistory(record));historyList.append(item)})}
+historyButton.addEventListener('click',()=>{renderHistory();historyMask.inert=false;historyMask.setAttribute('aria-hidden','false');historyMask.classList.add('is-open');historyButton.setAttribute('aria-expanded','true');document.getElementById('historySearch').focus()});
+const historySearchPage=document.getElementById('historySearchPage'),historyKeyword=document.getElementById('historyKeyword'),historySearchResults=document.getElementById('historySearchResults');
+const recentSearches=['会员投诉','私教消课'];
+function saveSearch(){const term=historyKeyword.value.trim();if(!term)return;const index=recentSearches.indexOf(term);if(index>=0)recentSearches.splice(index,1);recentSearches.unshift(term);recentSearches.splice(8)}
+function searchHistory(){if(!historyKeyword.value.trim()){historySearchResults.replaceChildren();const heading=document.createElement('h2');heading.className='search-history-heading';heading.textContent='历史搜索记录';const terms=document.createElement('div');terms.className='search-history-terms';recentSearches.forEach(term=>{const button=document.createElement('button');button.className='search-history-term';button.textContent=term;button.addEventListener('click',()=>{historyKeyword.value=term;saveSearch();searchHistory()});const card=document.createElement('div');card.className='search-history-card';const remove=document.createElement('button');remove.className='search-history-delete';remove.textContent='×';remove.setAttribute('aria-label','删除搜索记录：'+term);remove.addEventListener('click',()=>{const index=recentSearches.indexOf(term);if(index>=0)recentSearches.splice(index,1);searchHistory()});card.append(button,remove);terms.append(card)});historySearchResults.append(heading,terms);if(!recentSearches.length){const empty=document.createElement('p');empty.className='history-empty';empty.textContent='暂无历史搜索记录';historySearchResults.append(empty)}return}const keyword=historyKeyword.value.trim().toLowerCase();const results=demoHistory.filter(record=>!keyword||(record.title+' '+record.messages.map(entry=>entry[1]).join(' ')).toLowerCase().includes(keyword));historySearchResults.replaceChildren();results.forEach(record=>{const button=document.createElement('button');button.className='history-item';const icon=document.createElement('span');icon.className='history-agent-icon';icon.textContent='✦';icon.setAttribute('aria-hidden','true');const title=document.createElement('b');title.textContent=record.title;button.append(icon,title);button.addEventListener('click',()=>{if(busy)return;saveSearch();historySearchPage.hidden=true;loadHistory(record)});historySearchResults.append(button)});if(!results.length){const empty=document.createElement('p');empty.className='history-empty';empty.textContent='未找到相关对话记录';historySearchResults.append(empty)}}
+function closeHistorySearch(){historySearchPage.hidden=true;document.getElementById('historySearch').focus()}
+document.getElementById('historySearch').addEventListener('click',()=>{historyKeyword.value='';searchHistory();historySearchPage.hidden=false;historyMask.inert=true;historyKeyword.focus()});
+document.getElementById('backHistorySearch').addEventListener('click',()=>{historyMask.inert=false;closeHistorySearch()});
+historyKeyword.addEventListener('input',searchHistory);
+historyKeyword.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();saveSearch();searchHistory();historyKeyword.blur()}});
+historySearchPage.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();historyMask.inert=false;closeHistorySearch()}});
+document.getElementById('newHistoryChat').addEventListener('click',()=>loadHistory(null));
+document.getElementById('closeHistory').addEventListener('click',closeHistory);
+historyMask.addEventListener('click',event=>{if(event.target===historyMask)closeHistory()});
+historyMask.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();closeHistory()}if(event.key==='Tab'){const controls=[...historyMask.querySelectorAll('button,input')];const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
+document.querySelectorAll('.version-tab').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.version-tab').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelector('.app').dataset.version=button.dataset.version;updateVersionView()}));
+function syncTrialNote(){document.getElementById('trialNote').hidden=document.querySelector('.app').dataset.version!=='preview'||activeAssistant!=='knowledge'||!thread.querySelector('.message.user')}
+function updateVersionView(){syncTrialNote();const preview=document.querySelector('.app').dataset.version==='preview';historyButton.disabled=preview;if(preview){historySearchPage.hidden=true;if(historyMask.classList.contains('is-open'))closeHistory();}if(activeAssistant==='knowledge'){const version=document.querySelector('.app').dataset.version;document.getElementById('sceneName').textContent='知识库（'+({preview:'预览版',trial:'体验版',formal:'正式版'}[version])+'）';document.querySelector('#agentDetail .agent-copy h2').textContent=version==='preview'?'知识库（预览版）':'知识库（体验版）'}}
+document.getElementById('detailManual').addEventListener('click',()=>document.getElementById('trialManual').click());
+document.getElementById('trialManual').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='查看操作手册（演示提示）';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
+showSuggestions(0);
+</script>
+</body>
+</html>
