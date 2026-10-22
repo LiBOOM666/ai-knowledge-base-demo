@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>智能体用量详情</title><style>
+:root{--text:#2f3b52;--muted:#758195;--line:#e7edf3;--primary:#18a996}*{box-sizing:border-box}body{margin:0;background:#f1f4f7;color:var(--text);font:14px "PingFang SC","Microsoft YaHei",sans-serif}button,input,select{font:inherit}button{cursor:pointer}header{height:68px;background:#fff;border-bottom:1px solid var(--line);padding:0 32px;display:flex;align-items:center}h1{font-size:18px;font-weight:600;margin:0}main{max-width:1600px;margin:26px auto;padding:0 32px}.panel{background:white;border:1px solid var(--line)}form{padding:24px;display:flex;flex-wrap:wrap;align-items:end;gap:18px 24px}.field{display:flex;flex-direction:column;gap:10px}label{font-size:13px}input,select{height:36px;border:1px solid #dce4ec;border-radius:20px;padding:0 13px;background:#fff;color:var(--text)}select{min-width:175px}input[list]{width:190px}.dates{display:flex;gap:9px;align-items:center}.dates input{width:155px}button{border:1px solid #dce4ec;border-radius:20px;padding:7px 20px;background:white;color:var(--text);min-height:36px}.primary{background:#29c7b1;border-color:#29c7b1;color:white}.quiet{border-color:transparent;color:var(--muted)}:focus-visible{outline:2px solid #29c7b1;outline-offset:3px}.hint{margin:0 24px 20px;color:var(--muted);font-size:12px;line-height:1.8}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:1000px;table-layout:fixed}th,td{padding:17px 20px;text-align:left;border-top:1px solid var(--line);border-right:1px solid var(--line);font-weight:400}th{background:#fbfcfe;font-weight:600;font-size:13px}th:last-child,td:last-child{border-right:0}tbody tr:hover{background:#fcfefd}.num{text-align:right;font-variant-numeric:tabular-nums}.content{display:block;color:var(--primary);border:0;border-radius:0;padding:0;min-height:0;text-align:left;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:none;text-decoration:underline;text-underline-offset:4px}.date{font-size:13px;color:#657187}.pager{min-height:70px;display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:14px 24px;color:var(--muted);border-top:1px solid var(--line);flex-wrap:wrap}.pager button{padding:4px 11px;min-height:30px}.pager select{min-width:90px;height:32px}.pager button:disabled{opacity:.4;cursor:default}.page{border:1px solid #29c7b1;color:var(--primary);padding:5px 10px;background:#f0fcf8}.empty{text-align:center;height:230px;color:var(--muted)}.error{color:#e15050;font-size:12px;width:100%;margin:0}.error:empty{display:none}dialog{border:0;padding:0;width:760px;max-width:calc(100% - 32px);max-height:85vh;box-shadow:0 10px 30px #2f3b5226;color:var(--text)}dialog::backdrop{background:rgba(31,42,58,.36)}.dialog-head{height:62px;padding:0 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}h2{font-size:16px;margin:0}.close{border:0;font-size:24px;padding:0 9px}.dialog-body{padding:24px;max-height:60vh;overflow:auto}.message{margin:0 0 22px}.role{font-size:12px;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px}.message-time{font-variant-numeric:tabular-nums;color:#929cac}.bubble{background:#f5f7fa;padding:14px 16px;line-height:1.9;white-space:pre-line}.user .bubble{background:#edf9f6}.dialog-foot{padding:15px 24px;border-top:1px solid var(--line);text-align:right}.note{color:var(--muted);font-size:12px;margin:14px 0}@media(max-width:700px){header{padding:0 18px}main{padding:0 12px;margin:16px auto}form{padding:18px;gap:16px}.hint{margin:0 18px 18px}.dates input{width:140px}}
+
+/* 用量页布局适配 */
+header{height:60px;padding:0 20px}
+main{max-width:none;margin:16px auto;padding:0 16px}
+form{padding:20px;display:grid;grid-template-columns:190px 190px minmax(300px,1fr) auto;gap:16px;align-items:end}
+.field{min-width:0;gap:8px}
+input[list],select{width:100%;min-width:0}
+.dates input{width:0;min-width:0;flex:1}
+.dates{max-width:360px}
+form>div:last-of-type{white-space:nowrap}
+.error{grid-column:1/-1}
+table{min-width:700px}
+th,td{padding:15px 14px}
+.date{line-height:1.7;font-variant-numeric:tabular-nums}
+.date span{display:block}
+.date span+span{color:var(--muted);font-size:12px}
+.pager{min-height:62px;padding:12px 20px}
+.pager select{width:auto;min-width:95px}
+@media(max-width:1100px){
+form{grid-template-columns:190px 190px minmax(0,1fr);gap:16px 20px}
+form>.field:nth-child(3){grid-column:1/3;grid-row:2}
+form>div:last-of-type{grid-column:3;grid-row:2;justify-self:start}
+.dates{max-width:none}
+}
+@media(max-width:850px){
+form{grid-template-columns:170px 170px minmax(0,1fr);padding:18px 16px;gap:14px 16px}
+th,td{padding:14px 10px;font-size:13px}
+.date{font-size:12px}
+.num{white-space:nowrap}
+}
+@media(max-width:600px){
+header{padding:0 16px}main{padding:0 12px;margin:12px auto}
+form{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:16px;gap:14px 12px}
+form>.field:nth-child(3){grid-column:1/-1;grid-row:2}
+form>div:last-of-type{grid-column:1/-1;grid-row:3;justify-self:end}
+.pager{padding:12px;gap:8px}
+}
+.date{white-space:nowrap}table col:last-child{width:190px}@media(max-width:850px){table col:last-child{width:158px}}
+</style></head><body><header><h1>智能体用量详情</h1></header><main><section class="panel"><form id="filters"><div class="field"><label for="person">使用人</label><input id="person" list="people" placeholder="全部（搜索并选择）" autocomplete="off"><datalist id="people"></datalist></div><div class="field"><label for="agent">智能体</label><select id="agent"><option value="">全部</option><option>知识库问答助手</option><option>销售助手</option><option>门店运营助手</option></select></div><div class="field"><label for="start">创建时间</label><div class="dates"><input type="date" id="start" aria-label="创建时间起始日期"><span>至</span><input type="date" id="end" aria-label="创建时间结束日期"></div></div><div><button class="primary" type="submit">查询</button> <button class="quiet" type="button" id="reset">重置</button></div><p class="error" id="error" role="alert"></p></form><div class="scroll"><table><colgroup><col style="width:9%"><col style="width:18%"><col style="width:30%"><col style="width:11%"><col style="width:15%"><col style="width:17%"></colgroup><thead><tr><th>使用人</th><th>智能体</th><th>对话内容</th><th class="num">对话轮次</th><th class="num">累计用量</th><th>创建时间</th></tr></thead><tbody id="rows"></tbody></table></div><div class="pager"><span id="total" aria-live="polite"></span><select id="size" aria-label="每页条数"><option value="10">10 条/页</option><option value="20">20 条/页</option></select><button id="prev" aria-label="上一页">‹</button><span id="page" class="page"></span><button id="next" aria-label="下一页">›</button></div></section></main><dialog id="detail" aria-labelledby="detailTitle"><div class="dialog-head"><h2 id="detailTitle">对话内容</h2><button class="close" id="close" aria-label="关闭对话">×</button></div><div class="dialog-body"><div id="messages"></div></div><div class="dialog-foot"><button id="done">关闭</button></div></dialog><script>
+const $=id=>document.getElementById(id);
+const topics=[
+{agent:'知识库问答助手',title:'查询体验课预约与取消规则',qa:[['体验课怎么预约？','演示规则：登记学员信息，选择可预约时段，确认后提交预约。'],['临时有事可以取消吗？','演示规则：可以在预约记录中申请取消。\n具体时限请以门店正式制度为准。'],['取消后还能重新预约吗？','可以根据可预约时段重新提交预约。']]},
+{agent:'销售助手',title:'准备体验课后客户跟进话术',qa:[['客户上完体验课还在犹豫，怎么跟进？','可以先询问客户对课程的感受，再了解尚未决定的原因。\n根据客户反馈提供针对性的说明。'],['帮我写一段简短的跟进话术。','您好，想了解一下您上次体验课程后的感受。\n课程安排或训练目标方面，还有哪些希望进一步了解的内容？']]},
+{agent:'门店运营助手',title:'了解闭店巡检与交接要求',qa:[['闭店前需要检查什么？','演示检查项：场地清场、器材归位、水电检查、门窗检查。\n请按门店正式巡检表逐项核对。'],['发现器材损坏应该怎么处理？','先停止使用相关器材，做好标识，并向门店负责人反馈。'],['交接时需要记录什么？','记录异常情况、处理进展和需要继续跟进的事项。']]},
+{agent:'知识库问答助手',title:'查询新员工入职培训流程',qa:[['新员工入职需要参加哪些培训？','演示流程包含制度学习、服务规范和岗位操作培训。'],['培训完成后如何确认？','由岗位负责人按培训要求核对完成情况，并保留培训记录。']]}
+];
+const names=['张三','李娜','王磊','陈晨','刘洋','赵敏'];
+const records=Array.from({length:24},(_,i)=>{const t=topics[i%topics.length];return{id:'session-'+i,personId:'user-'+i%6,person:names[i%6],agent:t.agent,title:t.title,qa:t.qa,rounds:t.qa.length,usage:1250+i*317,created:`2026-10-${String(22-Math.floor(i/3)).padStart(2,'0')} ${String(16-i%7).padStart(2,'0')}:${String(48-i%40).padStart(2,'0')}:12`}});
+$('people').innerHTML=names.map(n=>`<option value="${n}"></option>`).join('');
+let filtered=records.slice(),page=1,size=10,lastTrigger;
+function render(){const pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.min(page,pages);$('rows').innerHTML=filtered.length?filtered.slice((page-1)*size,page*size).map(r=>`<tr><td>${r.person}</td><td>${r.agent}</td><td><button class="content" data-id="${r.id}" title="查看完整对话：${r.title}">${r.title}</button></td><td class="num">${r.rounds}</td><td class="num">${r.usage.toLocaleString()}</td><td class="date">${r.created}</td></tr>`).join(''):'<tr><td class="empty" colspan="6">暂无符合条件的记录，可调整筛选条件后重试。</td></tr>';$('total').textContent=`共 ${filtered.length} 条`;$('page').textContent=`${page} / ${pages}`;$('prev').disabled=page===1;$('next').disabled=page===pages;}
+$('filters').onsubmit=e=>{e.preventDefault();const name=$('person').value.trim(),agent=$('agent').value,start=$('start').value,end=$('end').value;$('error').textContent='';if(start&&end&&start>end){$('error').textContent='开始日期不能晚于结束日期。';return}const personIndex=names.indexOf(name);if(name&&personIndex<0){$('error').textContent='请从候选列表中选择使用人。';return}filtered=records.filter(r=>(!name||r.personId==='user-'+personIndex)&&(!agent||r.agent===agent)&&(!start||r.created.slice(0,10)>=start)&&(!end||r.created.slice(0,10)<=end));page=1;render()};
+$('reset').onclick=()=>{$('filters').reset();$('error').textContent='';filtered=records.slice();page=1;render()};$('size').onchange=()=>{size=Number($('size').value);page=1;render()};$('prev').onclick=()=>{page--;render()};$('next').onclick=()=>{page++;render()};
+$('rows').onclick=e=>{const b=e.target.closest('[data-id]');if(!b)return;lastTrigger=b;const r=records.find(r=>r.id===b.dataset.id);$('messages').replaceChildren();r.qa.forEach((pair,round)=>pair.forEach((text,i)=>{const box=document.createElement('section');box.className='message '+(i?'assistant':'user');const role=document.createElement('div');role.className='role';role.textContent=i?r.agent:r.person;const sentAt=new Date(r.created.replace(' ','T'));sentAt.setSeconds(sentAt.getSeconds()+round*120+i*8);const stamp=document.createElement('time');stamp.className='message-time';const pad=n=>String(n).padStart(2,'0');stamp.textContent=`${sentAt.getFullYear()}-${pad(sentAt.getMonth()+1)}-${pad(sentAt.getDate())} ${pad(sentAt.getHours())}:${pad(sentAt.getMinutes())}:${pad(sentAt.getSeconds())}`;stamp.dateTime=stamp.textContent.replace(' ','T');role.append(stamp);const bubble=document.createElement('div');bubble.className='bubble';bubble.textContent=text;box.append(role,bubble);$('messages').append(box)}));$('detail').showModal();$('detail').querySelector('.dialog-body').scrollTop=0};function closeDetail(){$('detail').close()}$('close').onclick=closeDetail;$('done').onclick=closeDetail;$('detail').addEventListener('close',()=>lastTrigger?.focus());$('detail').onclick=e=>{if(e.target===$('detail')){const r=$('detail').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDetail()}};render();
+</script></body></html>
