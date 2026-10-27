@@ -22,7 +22,7 @@
 </aside>
 <main class="content"><iframe id="demo" title="智能体管理" src="智能体管理.html"></iframe></main>
 <script>
-const pages={agents:{title:'智能体管理',file:'智能体管理.html'},knowledge:{title:'知识库管理',file:'知识库管理.html'},usage:{title:'用量记录',file:'智能体用量详情.html'}};
+const pages={agents:{title:'智能体管理',file:'智能体管理.html'},knowledge:{title:'知识库管理',file:'知识库管理.html?v=69da43a'},usage:{title:'用量记录',file:'智能体用量详情.html'}};
 const frame=document.getElementById('demo');
 function render(){let key=location.hash.split('/')[2];if(!pages[key]){location.replace('#/spinach-ai/agents');return}const page=pages[key];document.querySelectorAll('[data-route]').forEach(link=>{const active=link.dataset.route===key;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});if(frame.getAttribute('src')!==page.file)frame.src=page.file;frame.title=page.title;document.title='菠菜 ai · '+page.title}
 document.getElementById('group').addEventListener('click',function(){const expanded=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!expanded));document.getElementById('routes').hidden=expanded});
