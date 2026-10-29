@@ -40,45 +40,37 @@ footer{padding:10px 14px max(14px,env(safe-area-inset-bottom))}.input{padding:5p
 header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.history-button) h1{padding-left:28px}.history-button{border:0;background:transparent;color:var(--brand);font-size:12px;padding:8px 0;white-space:nowrap}.history-mask{position:absolute;inset:0;z-index:30;background:#17233b55;opacity:0;visibility:hidden;transition:opacity .24s,visibility .24s}.history-mask.is-open{opacity:1;visibility:visible}.history-panel{position:absolute;right:0;top:0;bottom:0;width:80%;background:white;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .24s ease;box-shadow:-8px 0 30px #17233b18}.history-mask.is-open .history-panel{transform:translateX(0)}.history-head{display:flex;align-items:center;justify-content:space-between;padding:20px 16px;border-bottom:1px solid var(--line)}.history-head h2{font-size:17px;margin:0}.history-close{width:32px;height:32px;border:0;background:transparent;color:var(--sub);font-size:26px}.history-list{flex:1;overflow:auto;padding:12px}.history-item{display:block;width:100%;padding:13px 10px;text-align:left;border:0;border-bottom:1px solid var(--line);background:white;color:var(--ink)}.history-item:hover{background:#f4f8ff}.history-item b{display:block;font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.history-item time{display:block;margin-top:5px;font-size:11px;color:var(--sub)}.history-empty{text-align:center;color:var(--sub);font-size:13px;margin:40px 0}@media(prefers-reduced-motion:reduce){.history-mask,.history-panel{transition:none}}
 .history-head{gap:8px;padding:18px 12px 12px;border:0}.history-search{flex:1;min-width:0;width:100%;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 11px;color:var(--sub);font:inherit;font-size:13px;cursor:text}.history-new{margin:0 16px 12px;padding:10px;border:1px solid #d4e3ff;border-radius:10px;background:#f1f6ff;color:var(--brand);font:inherit}.history-item[aria-current="true"]{background:#edf4ff;color:var(--brand)}.history-list{border-top:1px solid var(--line)}
 .history-button{display:grid;place-items:center;justify-self:end;width:40px;height:40px;padding:0;border-radius:50%}.history-button:hover{background:#f0f5fc}
-.history-item{display:flex;align-items:center;gap:10px}.history-item-copy{flex:1;min-width:0}
-.demo-layout{position:relative}.version-tabs{position:absolute;right:calc(100% + 24px);top:110px;width:132px;display:flex;flex-direction:column;gap:10px}.version-tab{padding:11px 14px;border:1px solid #cdd9eb;border-radius:10px;background:white;color:#52647e;white-space:nowrap}.version-tab[aria-pressed="true"]{border-color:var(--brand);background:#edf4ff;color:var(--brand);font-weight:600}.version-tab:focus-visible{outline:2px solid var(--brand);outline-offset:3px}@media(max-width:740px){body{display:block}.demo-layout{width:max-content;min-width:100%;display:flex;align-items:flex-start;gap:12px;padding:12px}.version-tabs{position:static;width:104px;flex:none;padding-top:90px}.demo-layout .app{flex:none}.version-tab{padding:10px 8px}} 
-.trial-steps{display:none;padding:20px 4px}.trial-steps h2{font-size:18px;margin:0 0 18px}.usage-step{display:flex;gap:12px;margin:0 0 14px}.step-number{flex:none;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#e8f1ff;color:#61799b;font-size:12px}.step-copy{min-width:0}.step-copy h3{font-size:14px;margin:0 0 3px}.step-copy p{font-size:12px;color:#61799b;line-height:1.7;margin:0 0 5px}.step-copy button{font-size:12px}.app:is([data-version="trial"],[data-version="formal"]) .intro-group>.intro,.app:is([data-version="trial"],[data-version="formal"]) .intro-group>.disclaimer,.app:is([data-version="trial"],[data-version="formal"]) #trialNote{display:none}.app:is([data-version="trial"],[data-version="formal"]) .trial-steps{display:block}
-.history-button:disabled{color:#b3bdcc;cursor:default}.history-button:disabled:hover{background:transparent}
-.history-agent-icon{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#e9f1ff;color:var(--brand);font-size:16px}
-.history-search-page{position:absolute;inset:0;z-index:35;background:white;display:flex;flex-direction:column}.history-search-page[hidden]{display:none}.search-page-head{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--line)}.search-page-head input{flex:1;min-width:0;height:38px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb;padding:0 10px;font:inherit}.search-page-results{flex:1;overflow:auto;padding:12px}
-.search-cancel{flex:none;border:0;background:transparent;color:var(--brand);padding:6px;font:inherit}.search-history-heading{font-size:14px;margin:8px 0 14px}.search-history-terms{display:flex;flex-wrap:wrap;gap:10px}.search-history-term{border:0;border-radius:16px;background:#f1f4f8;color:#52647e;font-size:13px;padding:6px 13px}
-.search-history-terms{display:flex;flex-direction:column;gap:0}.search-history-card{display:flex;align-items:center;gap:10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:6px 0}.search-history-card .search-history-term{flex:1;min-width:0;text-align:left;background:transparent;border-radius:0;padding:10px 2px;overflow-wrap:anywhere}.search-history-delete{flex:none;display:grid;place-items:center;width:36px;height:36px;border:0;background:transparent;color:#000;font-size:24px;line-height:1;padding:0}.search-history-delete:hover{color:#000}
-.history-head{align-items:center}.history-head .history-search{position:relative;top:0;align-self:center;display:flex;align-items:center;line-height:1.4}.history-head .history-close{display:grid;place-items:center;align-self:center;height:38px;padding:0;line-height:1}
-.knowledge-summary .agent-top{align-items:center}.knowledge-summary .agent-copy h2{margin:0}.knowledge-summary .knowledge-description{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line)}
-.usage-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.usage-heading h2{margin:0}.usage-heading .text-link{font-size:12px;flex:none}
-.trial-note-actions{display:flex;justify-content:flex-end;margin-bottom:4px}.trial-note p{margin:0}.trial-note .text-link{font-size:11px}
-
-.scroll:has(#thread .message) .trial-steps{display:none}
-.message.answer>.bubble.quota-error{padding:10px 12px;border:1px solid #f1c4c4;border-radius:10px;background:#fff4f3;color:#c43d3d;white-space:normal}
+.history-item{display:flex;align-items:center;gap:10px}.history-agent-icon{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:#e9f1ff;color:var(--brand);font-size:17px}.history-item-copy{flex:1;min-width:0}
 </style>
 </head>
 <body>
-<div class="demo-layout"><nav class="version-tabs" aria-label="演示版本"><button type="button" class="version-tab" data-version="preview" aria-pressed="true">管理员 预览版</button><button type="button" class="version-tab" data-version="trial" aria-pressed="false">正式版</button></nav>
-<main class="app" data-version="preview">
+<main class="app">
 <div class="speaker"></div><div class="status"><span>9:41</span><span class="status-icons">▮▮▮ ◔ ▰</span></div>
-<header><button class="back" id="back" aria-label="返回">‹</button><h1>菠菜 Ai</h1><button class="history-button" id="openHistory" disabled aria-controls="historyMask" aria-expanded="false" aria-label="对话历史" title="对话历史"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.6 7.4"/><path d="M3 4v7h7"/><path d="M12 7v5l3 2"/></svg></button></header>
-<section class="notice"><div class="symbol">✦</div><div class="notice-copy"><b id="sceneName">知识库问答助手（预览版）</b><span>您的场馆运营资料百事通</span></div><button class="switch" id="switch" aria-haspopup="dialog">详情</button></section>
+<header><button class="back" id="back" aria-label="返回">‹</button><h1>菠菜智能助手</h1><button class="history-button" id="openHistory" aria-controls="historyMask" aria-expanded="false" aria-label="对话历史" title="对话历史"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.6 7.4"/><path d="M3 4v7h7"/><path d="M12 7v5l3 2"/></svg></button></header>
+<section class="notice"><div class="symbol">✦</div><div class="notice-copy"><b id="sceneName">知识库助手（预览版）</b><span>您的场馆运营资料百事通</span></div><button class="switch" id="switch" aria-haspopup="dialog">切换</button></section>
 <section class="profile-area" id="salesProfile" aria-label="当前跟进会员" hidden><article class="profile-card"><div class="profile-head"><div class="profile-avatar" id="memberAvatar">演</div><div class="profile-main"><div class="profile-name"><b id="memberName">演示会员</b><i class="status-dot" aria-label="有效会员"></i></div><span id="memberInfo">女 · 9 岁 · 有效会员</span></div><button class="switch" id="switchMember">切换</button></div><div class="profile-details" id="profileDetails"><p class="portrait">用户画像：持续参课；近期状态稳定；可在课程结束后关注学习感受与后续安排。</p><div class="member-contract"><p>最近使用：少儿游泳进阶班次卡 · 2026-10-15</p></div></div><button class="profile-toggle" id="toggleProfile" aria-expanded="true" aria-controls="profileDetails">收起 ∧</button></article></section>
 <div class="member-picker" id="memberPicker" hidden><section class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="memberPickerTitle"><div class="picker-head"><h3 id="memberPickerTitle">切换跟进会员</h3><button id="closeMemberPicker" aria-label="关闭">×</button></div><button class="member-choice" data-member="0" aria-pressed="true"><b>演示会员</b><span>女 · 9 岁 · 有效会员</span></button><button class="member-choice" data-member="1" aria-pressed="false"><b>示例会员</b><span>男 · 10 岁 · 有效会员</span></button></section></div>
 <section class="scroll" id="scroll">
  <div class="intro-group">
- <section class="trial-steps" aria-label="使用步骤"><h2>使用步骤</h2><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>上传文件</h3><p>请联系场馆管理员前往电脑端上传知识库文件。</p><button class="text-link" id="trialManual">查看操作手册</button></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>发起问答</h3><p>文件上传完成后，场馆工作人员即可在手机端输入问题并查询知识库内容。</p></div></div></section>
- <div class="intro"><div class="symbol">✦</div><h2>有问题，问问知识库问答助手</h2><p>把业务资料变成随时可查的知识。
+ <div class="intro"><div class="symbol">✦</div><h2>有问题，问问知识库</h2><p>把业务资料变成随时可查的知识。
 输入问题，快速获得回答和资料出处。</p></div>
  <p class="disclaimer" style="margin:10px 4px 0;text-align:center">体验模式-尚未接通您场馆专属的知识空间<br>当前演示基于 <button class="text-link" id="openDocuments">示例资料</button></p>
  </div>
  <div id="thread" role="log" aria-live="polite" aria-label="体验对话"></div>
 </section>
-<div class="trial-note" id="trialNote" hidden>请前往电脑端，开启功能后正式使用。</div>
+<p class="trial-note" id="trialNote" hidden>您可以联系菠菜工作人员领取试用权益<br>体验上传、使用您场馆专属的知识库</p>
 <div class="examples" id="suggestions" aria-label="建议提问"></div>
 <footer><form id="form"><div class="input"><textarea id="query" rows="1" maxlength="500" placeholder="输入问题，感受问答效果" aria-label="问题"></textarea><button id="send" disabled>发送</button></div></form></footer>
+<section class="square-page" id="agentSquare" aria-label="智能体广场" hidden>
+<header><button class="back" id="closeSquare" aria-label="返回对话">‹</button><h1>智能体广场</h1><span></span></header>
+<div class="agent-list">
+<article class="agent-card current" id="enterKnowledge"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手</h2><p>您的场馆运营资料百事通</p></div><button class="enter-dialog" id="enterKnowledgeChat">进入对话</button></div><div class="agent-bottom"><span>预览版</span><button class="agent-enter" id="viewKnowledgeDetail">查看详情 ›</button></div></article>
+<article class="agent-card current sales-card"><div class="agent-top"><span class="agent-icon">◎</span><div class="agent-copy"><h2>销售助手</h2><p>辅助会员需求沟通、会员卡推荐和销售跟进。</p></div><button class="enter-dialog" id="enterSalesChat">进入对话</button></div><div class="agent-bottom"><span>基础版</span><button class="agent-enter" id="viewSalesDetail">查看详情 ›</button></div></article>
+<article class="agent-card upcoming"><div class="agent-top"><span class="agent-icon">◇</span><div class="agent-copy"><h2>教练助手</h2><p>辅助查询课程服务规范与日常教学资料。</p></div></div><div class="agent-bottom"><span>敬请期待</span></div></article>
+<article class="agent-card upcoming"><div class="agent-top"><span class="agent-icon">▤</span><div class="agent-copy"><h2>运营助手</h2><p>辅助查阅场馆运营制度与会员服务流程。</p></div></div><div class="agent-bottom"><span>敬请期待</span></div></article>
+</div></section>
 <section class="square-page agent-detail" id="salesDetail" aria-label="销售助手详情" hidden>
-<header><button class="back" id="closeSalesDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
+<header><button class="back" id="closeSalesDetail" aria-label="返回智能体广场">‹</button><h1>智能体详情</h1><span></span></header>
 <div class="detail-body">
 <section class="detail-card"><div class="agent-top"><span class="agent-icon">◎</span><div class="agent-copy"><h2>销售助手</h2><p>协助您制定会员跟进与续费策略</p></div></div><p>围绕单个会员了解近况、分析需求，帮助销售安排下一步跟进。</p></section>
 <section class="detail-card"><h2>核心能力</h2><div class="feature-item"><h3>了解会员近况</h3><p>查询会员最近上课、签课及合同剩余等信息，为沟通提供参考。</p></div><div class="feature-item"><h3>根据画像提供跟进建议</h3><p>结合会员画像与使用情况，给出跟进、续费策略及参考话术。</p></div><div class="feature-item"><h3>分析反馈并整理跟进</h3><p>销售补充会员近况后，先给出基础分析，再通过“整理内容并计入跟进”生成跟进记录。</p></div></section>
@@ -87,13 +79,12 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 </div><div class="detail-actions"><button class="primary" id="salesDetailChat">进入对话</button></div>
 </section>
 <section class="square-page agent-detail" id="agentDetail" aria-label="智能体详情" hidden>
-<header><button class="back" id="closeDetail" aria-label="返回对话">‹</button><h1>智能体详情</h1><span></span></header>
+<header><button class="back" id="closeDetail" aria-label="返回智能体广场">‹</button><h1>智能体详情</h1><span></span></header>
 <div class="detail-body">
-<section class="detail-card knowledge-summary"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库问答助手（预览版）</h2></div></div><p class="knowledge-description">将场馆的制度、服务规范变成可随时查询的知识。<br>员工直接提问，即可根据资料获取回答，并查看出处。</p></section>
-<section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>新人培训少些重复讲解</h3><p>将员工手册、岗位职责和操作指南放入知识库，新人遇到问题随时查询，减少重复答疑。</p></div><div class="feature-item"><h3>门店执行有统一依据</h3><p>集中提供服务标准、巡检要求和应急预案，员工按需查阅，让日常执行有章可循。</p></div><div class="feature-item"><h3>运营经验留下来、用起来</h3><p>将运营方案、培训材料和经验总结集中沉淀，方便员工查找和复用，减少对个人记忆的依赖。</p></div></section>
-<section class="detail-card"><div class="usage-heading"><h2>使用步骤</h2><button class="text-link" id="detailManual">操作手册</button></div><div class="usage-step"><span class="step-number">1</span><div class="step-copy"><h3>管理员上传资料</h3><p>在电脑端上传各类规范文件。</p></div></div><div class="usage-step"><span class="step-number">2</span><div class="step-copy"><h3>员工直接提问</h3><p>打开手机端，输入问题，获得 ai 回复。</p></div></div></section>
+<section class="detail-card"><div class="agent-top"><span class="agent-icon">✦</span><div class="agent-copy"><h2>知识库助手（预览版）</h2><p>您的场馆运营资料百事通</p></div></div><p>围绕场馆运营资料进行提问，快速获取回答，并查看对应资料出处。</p></section>
+<section class="detail-card"><h2>功能介绍</h2><div class="feature-item"><h3>管理场馆专属资料</h3><p>开通试用或正式服务后，可在电脑端上传场馆业务资料，建立专属知识库。</p></div><div class="feature-item"><h3>根据资料进行问答</h3><p>员工围绕运营制度、服务规范和操作流程提问，从知识库中查询相关内容。</p></div><div class="feature-item"><h3>查看引用和原文</h3><p>回答附带资料出处，可查看引用切片与完整文档。</p></div></section>
 </div>
-
+<div class="detail-actions"><button id="previewAgent">体验对话</button></div>
 </section>
 <section class="documents-page" id="documentsPage" aria-label="示例资料浏览" hidden><header><button class="back" id="closeDocuments" aria-label="返回对话">‹</button><h1>示例资料</h1><span></span></header><div class="documents-body"><article class="document">
 <h2>场馆日常业务操作指南</h2>
@@ -116,10 +107,9 @@ header:has(.history-button){grid-template-columns:48px 1fr 76px}header:has(.hist
 <p>从需求沟通到课程服务，再到问题处理，各环节均应以实际业务情况为依据，确保服务信息清楚、操作有据、问题有反馈。</p>
 </article></div></section>
 <div class="source-mask" id="sourceMask" hidden><section class="source-sheet" role="dialog" aria-modal="true" aria-labelledby="sourceTitle"><div class="handle"></div><div class="source-head"><h3 id="sourceTitle">场馆日常业务操作指南</h3><button id="closeSource" aria-label="关闭资料引用">×</button></div><p class="doc-meta" id="sourceMeta"></p><p class="excerpt" id="sourceExcerpt"></p><button class="full-doc" id="viewSource">查看源文件</button></section></div>
-<div class="history-mask" id="historyMask" inert aria-hidden="true"><section class="history-panel" role="dialog" aria-modal="true" aria-label="对话历史"><div class="history-head"><button class="history-search" id="historySearch" type="button" style="text-align:left" aria-label="搜索对话记录">搜索对话记录</button><button class="history-close" id="closeHistory" aria-label="关闭对话历史">×</button></div><button class="history-new" id="newHistoryChat">＋ 新对话</button><div class="history-list" id="historyList"></div></section></div>
-<section class="history-search-page" id="historySearchPage" aria-label="搜索对话记录" hidden><div class="status"><span>9:41</span><span class="status-icons">▮▮▮ ◔ ▰</span></div><div class="search-page-head"><input id="historyKeyword" type="search" placeholder="搜索对话记录" aria-label="输入对话关键词"><button class="search-cancel" id="backHistorySearch">取消</button></div><div class="search-page-results" id="historySearchResults" aria-live="polite"></div></section>
+<div class="history-mask" id="historyMask" inert aria-hidden="true"><section class="history-panel" role="dialog" aria-modal="true" aria-label="对话历史"><div class="history-head"><input class="history-search" id="historySearch" type="text" placeholder="搜索对话记录" aria-label="搜索对话记录" readonly><button class="history-close" id="closeHistory" aria-label="关闭对话历史">×</button></div><button class="history-new" id="newHistoryChat">＋ 新对话</button><div class="history-list" id="historyList"></div></section></div>
 <div class="toast" id="toast" role="status" hidden></div>
-</main></div>
+</main>
 <script>
 const query=document.getElementById('query'),send=document.getElementById('send'),thread=document.getElementById('thread'),scrollArea=document.getElementById('scroll');
 const materials=[
@@ -137,7 +127,7 @@ function sync(){send.disabled=busy||!query.value.trim();query.style.height='34px
 function bottom(){scrollArea.scrollTop=scrollArea.scrollHeight}
 function addMessageTime(row){const now=new Date();const time=document.createElement('time');time.className='message-time';time.dateTime=now.toISOString();time.textContent=now.toLocaleTimeString('zh-CN',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false});row.append(time)}
 function message(kind,text){const row=document.createElement('div');row.className='message '+kind;const avatar=document.createElement('span');avatar.className='avatar';avatar.textContent=kind==='user'?'我':'✦';row.append(avatar);const bubble=document.createElement('div');bubble.className='bubble';bubble.textContent=text;row.append(bubble);if(kind==='user')addMessageTime(row);thread.append(row);return {row,bubble}}
-function ask(text){text=text.trim();if(!text||busy)return;if(activeAssistant==='sales'&&completedRounds===0)setProfileCollapsed(true);busy=true;syncTrialNote();message('user',text);syncTrialNote();query.value='';sync();const pending=message('answer',activeAssistant==='sales'?'正在分析该会员的跟进情况':'正在查找示例资料');pending.bubble.classList.add('thinking');thread.setAttribute('aria-busy','true');bottom();setTimeout(()=>{pending.row.remove();const answer=message('answer','');if(completedRounds>=2){answer.bubble.classList.add('quota-error');answer.bubble.setAttribute('role','alert');answer.bubble.textContent='额度不足，请联系管理员扩充额度';}else if(activeAssistant==='sales'){renderSalesReply(answer.bubble,text)}else{const result=materials.find(item=>item.match.test(text));if(result){renderReply(answer.bubble,result)}else{answer.bubble.textContent='示例资料中暂未找到相关内容。当前支持体验会员投诉、会员卡推荐和私教消课相关问题，你可以换一个问题试试。'}}addMessageTime(answer.row);completedRounds++;busy=false;thread.setAttribute('aria-busy','false');sync();bottom()},850)}
+function ask(text){text=text.trim();if(!text||busy)return;if(activeAssistant==='sales'&&completedRounds===0)setProfileCollapsed(true);busy=true;document.getElementById('trialNote').hidden=activeAssistant!=='knowledge';message('user',text);query.value='';sync();const pending=message('answer',activeAssistant==='sales'?'正在分析该会员的跟进情况':'正在查找示例资料');pending.bubble.classList.add('thinking');thread.setAttribute('aria-busy','true');bottom();setTimeout(()=>{pending.row.remove();const answer=message('answer','');if(activeAssistant==='sales'){renderSalesReply(answer.bubble,text)}else{const result=materials.find(item=>item.match.test(text));if(result){renderReply(answer.bubble,result)}else{answer.bubble.textContent='示例资料中暂未找到相关内容。当前支持体验会员投诉、会员卡推荐和私教消课相关问题，你可以换一个问题试试。'}}addMessageTime(answer.row);completedRounds++;busy=false;thread.setAttribute('aria-busy','false');sync();bottom()},850)}
 function renderSalesReply(bubble,text){
  const memberName=document.getElementById('memberName').textContent;
  const asksAdvice=/建议|策略|怎么|如何|适合|下一步|跟进吗/.test(text);
@@ -185,18 +175,25 @@ const questions=['会员投诉应该如何处理？','如何推荐合适的会�
 const sceneQuestions=[questions,[questions[0],'接到会员客诉后要记录哪些信息？','如何向会员反馈投诉处理进展？'],['了解这位会员的近况、签课和合同剩余信息','根据会员画像，下一步怎么跟进？','家长说最近比较忙，暂时不考虑续费'],[questions[2],'私教课核销前需要核对什么？','会员未到店，能直接消课吗？']];
 let suggestionScene=0,suggestionIndex=0;
 function showSuggestions(scene){suggestionScene=scene;suggestionIndex=0;const box=document.getElementById('suggestions');box.replaceChildren();const label=document.createElement('div');label.className='label';label.textContent='可以试试';const question=document.createElement('button');question.className='example';question.id='suggestedQuestion';question.textContent=sceneQuestions[scene][0];question.addEventListener('click',()=>ask(question.textContent));const refresh=document.createElement('button');refresh.className='refresh-question';refresh.textContent='换一换';refresh.title='换一换';refresh.setAttribute('aria-label','换一换建议提问');refresh.addEventListener('click',()=>{suggestionIndex=(suggestionIndex+1)%sceneQuestions[suggestionScene].length;question.textContent=sceneQuestions[suggestionScene][suggestionIndex]});box.append(label,question,refresh)}
-const switchButton=document.getElementById('switch');
+const agentSquare=document.getElementById('agentSquare'),switchButton=document.getElementById('switch');
+function closeSquare(){agentSquare.hidden=true;switchButton.focus()}
 switchButton.setAttribute('aria-haspopup','false');
-switchButton.addEventListener('click',()=>{const sales=activeAssistant==='sales';(sales?salesDetail:agentDetail).hidden=false;document.getElementById(sales?'closeSalesDetail':'closeDetail').focus()});
+switchButton.addEventListener('click',()=>{agentSquare.hidden=false;document.getElementById('closeSquare').focus()});
+document.getElementById('closeSquare').addEventListener('click',closeSquare);
 const agentDetail=document.getElementById('agentDetail');
 const salesDetail=document.getElementById('salesDetail');
-function closeSalesDetail(){salesDetail.hidden=true;switchButton.focus()}
+function closeSalesDetail(){salesDetail.hidden=true;document.getElementById('viewSalesDetail').focus()}
+document.getElementById('viewSalesDetail').addEventListener('click',()=>{salesDetail.hidden=false;document.getElementById('closeSalesDetail').focus()});
 document.getElementById('closeSalesDetail').addEventListener('click',closeSalesDetail);
 document.getElementById('salesDetailChat').addEventListener('click',()=>{if(busy)return;salesDetail.hidden=true;enterAssistant('sales')});
-function closeDetail(){agentDetail.hidden=true;switchButton.focus()}
-function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库问答助手（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;syncTrialNote();query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();updateVersionView();scrollArea.scrollTop=state.scroll}
+function closeDetail(){agentDetail.hidden=true;document.getElementById('viewKnowledgeDetail').focus()}
+function enterAssistant(next){if(busy){const toast=document.getElementById('toast');toast.textContent='请等待当前回答完成后再切换';toast.hidden=false;setTimeout(()=>toast.hidden=true,1800);return}assistantStates[activeAssistant]={nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop};activeAssistant=next;const state=assistantStates[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;const sales=next==='sales';document.getElementById('sceneName').textContent=sales?'销售助手（基础版）':'知识库助手（预览版）';document.querySelector('.notice-copy>span').textContent=sales?'协助您制定会员跟进与续费策略':'您的场馆运营资料百事通';document.querySelector('.notice>.symbol').textContent=sales?'◎':'✦';document.querySelector('.intro-group').hidden=sales;document.getElementById('salesProfile').hidden=!sales;document.getElementById('trialNote').hidden=sales||completedRounds===0;query.placeholder=sales?'围绕这位会员，输入跟进或续费问题':'输入问题，感受问答效果';showSuggestions(sales?2:0);sync();closeSquare();scrollArea.scrollTop=state.scroll}
+document.getElementById('enterKnowledgeChat').addEventListener('click',()=>enterAssistant('knowledge'));
+document.getElementById('enterSalesChat').addEventListener('click',()=>enterAssistant('sales'));
+document.getElementById('viewKnowledgeDetail').addEventListener('click',event=>{event.stopPropagation();agentDetail.hidden=false;document.getElementById('closeDetail').focus()});
 document.getElementById('closeDetail').addEventListener('click',closeDetail);
-document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail()}});
+document.getElementById('previewAgent').addEventListener('click',()=>{if(busy)return;agentDetail.hidden=true;enterAssistant('knowledge')});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!salesDetail.hidden)closeSalesDetail();else if(!agentDetail.hidden)closeDetail();else if(!agentSquare.hidden)closeSquare()}});
 let selectedMember=0;
 const memberChats=[{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false},{nodes:[],rounds:0,draft:'',scroll:0,collapsed:false}];
 function setProfileCollapsed(collapsed){document.getElementById('profileDetails').hidden=collapsed;const toggle=document.getElementById('toggleProfile');toggle.textContent=collapsed?'展开 ∨':'收起 ∧';toggle.setAttribute('aria-expanded',String(!collapsed));memberChats[selectedMember].collapsed=collapsed}
@@ -207,7 +204,7 @@ document.getElementById('switchMember').addEventListener('click',()=>{if(busy)re
 document.getElementById('closeMemberPicker').addEventListener('click',closeMemberPicker);
 memberPicker.addEventListener('click',event=>{if(event.target===memberPicker)closeMemberPicker()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!memberPicker.hidden)closeMemberPicker()});
-memberPicker.querySelectorAll('[data-member]').forEach(button=>button.addEventListener('click',()=>{if(busy)return;const next=Number(button.dataset.member);if(next!==selectedMember){Object.assign(memberChats[selectedMember],{nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop});selectedMember=next;const state=memberChats[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;document.getElementById('memberName').textContent=button.querySelector('b').textContent;document.getElementById('memberInfo').textContent=button.querySelector('span').textContent;document.getElementById('memberAvatar').textContent=next===0?'演':'示';setProfileCollapsed(state.collapsed);showSuggestions(2);sync();updateVersionView();scrollArea.scrollTop=state.scroll}memberPicker.querySelectorAll('[data-member]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));closeMemberPicker()}));
+memberPicker.querySelectorAll('[data-member]').forEach(button=>button.addEventListener('click',()=>{if(busy)return;const next=Number(button.dataset.member);if(next!==selectedMember){Object.assign(memberChats[selectedMember],{nodes:[...thread.childNodes],rounds:completedRounds,draft:query.value,scroll:scrollArea.scrollTop});selectedMember=next;const state=memberChats[next];thread.replaceChildren(...state.nodes);completedRounds=state.rounds;query.value=state.draft;document.getElementById('memberName').textContent=button.querySelector('b').textContent;document.getElementById('memberInfo').textContent=button.querySelector('span').textContent;document.getElementById('memberAvatar').textContent=next===0?'演':'示';setProfileCollapsed(state.collapsed);showSuggestions(2);sync();scrollArea.scrollTop=state.scroll}memberPicker.querySelectorAll('[data-member]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));closeMemberPicker()}));
 const historyMask=document.getElementById('historyMask'),historyButton=document.getElementById('openHistory'),historyList=document.getElementById('historyList');
 const demoHistory=[
  {
@@ -234,6 +231,29 @@ const demoHistory=[
   ]
  },
  {
+  "title": "根据会员画像制定跟进计划",
+  "assistant": "sales",
+  "date": "2026-10-18 10:15",
+  "messages": [
+   [
+    "user",
+    "根据这位会员的画像，下一步怎么跟进？"
+   ],
+   [
+    "answer",
+    "演示会员近期持续参课，当前合同剩余 10 节。\n建议先了解家长对课程的感受，结合教练反馈确认后续学习目标，再约定下一次联系时间。"
+   ],
+   [
+    "user",
+    "现在需要直接问续费吗？"
+   ],
+   [
+    "answer",
+    "可以先了解后续学习意向和时间安排。\n当前仍有剩余课时，先维护课程体验，再结合实际进度沟通续班方案。"
+   ]
+  ]
+ },
+ {
   "title": "私教课消课前的核对事项",
   "assistant": "knowledge",
   "date": "2026-10-17 18:20",
@@ -255,6 +275,52 @@ const demoHistory=[
     "不能直接消课。\n应登记未到店情况，并按实际业务流程处理异常。"
    ]
   ]
+ },
+ {
+  "title": "家长近期忙，如何调整跟进节奏",
+  "assistant": "sales",
+  "date": "2026-10-16 14:40",
+  "messages": [
+   [
+    "user",
+    "家长说最近比较忙，暂时不考虑续费。"
+   ],
+   [
+    "answer",
+    "先了解时间冲突预计会持续多久，以及家长能接受的上课安排。\n这条反馈不能直接等同于会员流失，建议暂缓催促续费。"
+   ],
+   [
+    "user",
+    "下次联系可以怎么说？"
+   ],
+   [
+    "answer",
+    "可以参考：了解到您最近时间比较紧张，想确认一下后续哪段时间更方便上课？我们先看看课程怎么安排更合适。\n根据家长反馈约定下一次联系时间。"
+   ]
+  ]
+ },
+ {
+  "title": "家长对续班费用有顾虑",
+  "assistant": "sales",
+  "date": "2026-10-15 09:10",
+  "messages": [
+   [
+    "user",
+    "家长觉得续班费用有点高，应该怎么沟通？"
+   ],
+   [
+    "answer",
+    "先确认主要是预算安排，还是对课程效果有疑问。\n结合会员的实际学习情况说明已确认的课程权益，不自行承诺优惠。"
+   ],
+   [
+    "user",
+    "帮我整理一句沟通话术。"
+   ],
+   [
+    "answer",
+    "可以参考：了解到您对费用有些顾虑，方便说说主要是预算安排，还是希望进一步了解孩子的学习效果？我先了解清楚，再一起看看合适的安排。"
+   ]
+  ]
  }
 ];
 let activeHistory=null;
@@ -266,32 +332,18 @@ function loadHistory(record){
  const targetAssistant=record?.assistant||activeAssistant;
  if(activeAssistant!==targetAssistant)enterAssistant(targetAssistant);
  activeHistory=record;thread.replaceChildren();query.value=record?.draft||'';
- if(record?.nodes){thread.append(...record.nodes);completedRounds=record.rounds}else if(record){record.messages.forEach(([kind,text],index)=>{const entry=message(kind,text);if(kind==='answer')addMessageTime(entry.row);const time=entry.row.querySelector('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00'});completedRounds=record.messages.filter(([kind])=>kind==='answer').length}else{completedRounds=0}
- syncTrialNote();
+ if(record?.nodes){thread.append(...record.nodes);completedRounds=record.rounds}else if(record){record.messages.forEach(([kind,text],index)=>{const entry=message(kind,text);if(kind==='answer')addMessageTime(entry.row);const time=entry.row.querySelector('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库助手')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00'});completedRounds=record.messages.filter(([kind])=>kind==='answer').length}else{completedRounds=0}
+ document.getElementById('trialNote').hidden=activeAssistant!=='knowledge'||completedRounds===0;
  if(activeAssistant==='sales')setProfileCollapsed(completedRounds>0);
  thread.setAttribute('aria-busy','false');sync();closeHistory();bottom();
 }
-function renderHistory(){historyList.replaceChildren();demoHistory.forEach(record=>{const item=document.createElement('button');item.className='history-item';item.setAttribute('aria-current',String(activeHistory===record));const title=document.createElement('b');title.textContent=record.title;const time=document.createElement('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00';const copy=document.createElement('span');copy.className='history-item-copy';copy.append(title);const icon=document.createElement('span');icon.className='history-agent-icon';icon.setAttribute('aria-hidden','true');icon.textContent='✦';item.append(icon,copy);item.addEventListener('click',()=>loadHistory(record));historyList.append(item)})}
+function renderHistory(){historyList.replaceChildren();demoHistory.forEach(record=>{const item=document.createElement('button');item.className='history-item';item.setAttribute('aria-current',String(activeHistory===record));const title=document.createElement('b');title.textContent=record.title;const time=document.createElement('time');time.textContent=(record.assistant==='sales'?'销售助手':'知识库助手')+' · '+record.date;time.dateTime=record.date.replace(' ','T')+':00+08:00';const icon=document.createElement('span');icon.className='history-agent-icon';icon.setAttribute('aria-hidden','true');icon.textContent=record.assistant==='sales'?'◎':'✦';const copy=document.createElement('span');copy.className='history-item-copy';copy.append(title,time);item.append(icon,copy);item.addEventListener('click',()=>loadHistory(record));historyList.append(item)})}
 historyButton.addEventListener('click',()=>{renderHistory();historyMask.inert=false;historyMask.setAttribute('aria-hidden','false');historyMask.classList.add('is-open');historyButton.setAttribute('aria-expanded','true');document.getElementById('historySearch').focus()});
-const historySearchPage=document.getElementById('historySearchPage'),historyKeyword=document.getElementById('historyKeyword'),historySearchResults=document.getElementById('historySearchResults');
-const recentSearches=['会员投诉','私教消课'];
-function saveSearch(){const term=historyKeyword.value.trim();if(!term)return;const index=recentSearches.indexOf(term);if(index>=0)recentSearches.splice(index,1);recentSearches.unshift(term);recentSearches.splice(8)}
-function searchHistory(){if(!historyKeyword.value.trim()){historySearchResults.replaceChildren();const heading=document.createElement('h2');heading.className='search-history-heading';heading.textContent='历史搜索记录';const terms=document.createElement('div');terms.className='search-history-terms';recentSearches.forEach(term=>{const button=document.createElement('button');button.className='search-history-term';button.textContent=term;button.addEventListener('click',()=>{historyKeyword.value=term;saveSearch();searchHistory()});const card=document.createElement('div');card.className='search-history-card';const remove=document.createElement('button');remove.className='search-history-delete';remove.textContent='×';remove.setAttribute('aria-label','删除搜索记录：'+term);remove.addEventListener('click',()=>{const index=recentSearches.indexOf(term);if(index>=0)recentSearches.splice(index,1);searchHistory()});card.append(button,remove);terms.append(card)});historySearchResults.append(heading,terms);if(!recentSearches.length){const empty=document.createElement('p');empty.className='history-empty';empty.textContent='暂无历史搜索记录';historySearchResults.append(empty)}return}const keyword=historyKeyword.value.trim().toLowerCase();const results=demoHistory.filter(record=>!keyword||(record.title+' '+record.messages.map(entry=>entry[1]).join(' ')).toLowerCase().includes(keyword));historySearchResults.replaceChildren();results.forEach(record=>{const button=document.createElement('button');button.className='history-item';const icon=document.createElement('span');icon.className='history-agent-icon';icon.textContent='✦';icon.setAttribute('aria-hidden','true');const title=document.createElement('b');title.textContent=record.title;button.append(icon,title);button.addEventListener('click',()=>{if(busy)return;saveSearch();historySearchPage.hidden=true;loadHistory(record)});historySearchResults.append(button)});if(!results.length){const empty=document.createElement('p');empty.className='history-empty';empty.textContent='未找到相关对话记录';historySearchResults.append(empty)}}
-function closeHistorySearch(){historySearchPage.hidden=true;document.getElementById('historySearch').focus()}
-document.getElementById('historySearch').addEventListener('click',()=>{historyKeyword.value='';searchHistory();historySearchPage.hidden=false;historyMask.inert=true;historyKeyword.focus()});
-document.getElementById('backHistorySearch').addEventListener('click',()=>{historyMask.inert=false;closeHistorySearch()});
-historyKeyword.addEventListener('input',searchHistory);
-historyKeyword.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();saveSearch();searchHistory();historyKeyword.blur()}});
-historySearchPage.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();historyMask.inert=false;closeHistorySearch()}});
+document.getElementById('historySearch').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='进入搜索页面（演示提示）';toast.style.zIndex='40';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 document.getElementById('newHistoryChat').addEventListener('click',()=>loadHistory(null));
 document.getElementById('closeHistory').addEventListener('click',closeHistory);
 historyMask.addEventListener('click',event=>{if(event.target===historyMask)closeHistory()});
 historyMask.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();closeHistory()}if(event.key==='Tab'){const controls=[...historyMask.querySelectorAll('button,input')];const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
-document.querySelectorAll('.version-tab').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.version-tab').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelector('.app').dataset.version=button.dataset.version;updateVersionView()}));
-function syncTrialNote(){document.getElementById('trialNote').hidden=document.querySelector('.app').dataset.version!=='preview'||activeAssistant!=='knowledge'||!thread.querySelector('.message.user')}
-function updateVersionView(){syncTrialNote();const preview=document.querySelector('.app').dataset.version==='preview';historyButton.disabled=preview;if(preview){historySearchPage.hidden=true;if(historyMask.classList.contains('is-open'))closeHistory();}if(activeAssistant==='knowledge'){const version=document.querySelector('.app').dataset.version;document.getElementById('sceneName').textContent='知识库问答助手（'+({preview:'预览版',trial:'体验版',formal:'正式版'}[version])+'）';document.querySelector('#agentDetail .agent-copy h2').textContent=version==='preview'?'知识库问答助手（预览版）':'知识库问答助手（体验版）'}}
-document.getElementById('detailManual').addEventListener('click',()=>document.getElementById('trialManual').click());
-document.getElementById('trialManual').addEventListener('click',()=>{const toast=document.getElementById('toast');toast.textContent='查看操作手册（演示提示）';toast.hidden=false;setTimeout(()=>toast.hidden=true,2200)});
 showSuggestions(0);
 </script>
 </body>
